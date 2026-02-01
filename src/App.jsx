@@ -1,10 +1,46 @@
 import { useState, useEffect } from 'react'
 import questions from './data/questions.json'
 
+// Cores por matéria
+const subjectColors = {
+  'Matemática': { bg: 'bg-blue-500', light: 'bg-blue-100', text: 'text-blue-600', border: 'border-blue-500', gradient: 'from-blue-500 to-blue-600' },
+  'Português': { bg: 'bg-purple-500', light: 'bg-purple-100', text: 'text-purple-600', border: 'border-purple-500', gradient: 'from-purple-500 to-purple-600' },
+  'Literatura': { bg: 'bg-violet-500', light: 'bg-violet-100', text: 'text-violet-600', border: 'border-violet-500', gradient: 'from-violet-500 to-violet-600' },
+  'História': { bg: 'bg-orange-500', light: 'bg-orange-100', text: 'text-orange-600', border: 'border-orange-500', gradient: 'from-orange-500 to-orange-600' },
+  'Biologia': { bg: 'bg-green-500', light: 'bg-green-100', text: 'text-green-600', border: 'border-green-500', gradient: 'from-green-500 to-green-600' },
+  'Química': { bg: 'bg-red-500', light: 'bg-red-100', text: 'text-red-600', border: 'border-red-500', gradient: 'from-red-500 to-red-600' },
+  'Física': { bg: 'bg-cyan-500', light: 'bg-cyan-100', text: 'text-cyan-600', border: 'border-cyan-500', gradient: 'from-cyan-500 to-cyan-600' },
+  'Geografia': { bg: 'bg-amber-500', light: 'bg-amber-100', text: 'text-amber-600', border: 'border-amber-500', gradient: 'from-amber-500 to-amber-600' },
+  'Filosofia': { bg: 'bg-pink-500', light: 'bg-pink-100', text: 'text-pink-600', border: 'border-pink-500', gradient: 'from-pink-500 to-pink-600' },
+  'Artes': { bg: 'bg-rose-500', light: 'bg-rose-100', text: 'text-rose-600', border: 'border-rose-500', gradient: 'from-rose-500 to-rose-600' },
+  'Espanhol': { bg: 'bg-yellow-500', light: 'bg-yellow-100', text: 'text-yellow-600', border: 'border-yellow-500', gradient: 'from-yellow-500 to-yellow-600' },
+  'Inglês': { bg: 'bg-indigo-500', light: 'bg-indigo-100', text: 'text-indigo-600', border: 'border-indigo-500', gradient: 'from-indigo-500 to-indigo-600' },
+}
+
+const getSubjectColor = (subject) => subjectColors[subject] || { bg: 'bg-gray-500', light: 'bg-gray-100', text: 'text-gray-600', border: 'border-gray-500', gradient: 'from-gray-500 to-gray-600' }
+
+// Ícones das matérias
+const subjectIcons = {
+  'Matemática': '📐',
+  'Português': '📝',
+  'Literatura': '📚',
+  'História': '🏛️',
+  'Biologia': '🧬',
+  'Química': '⚗️',
+  'Física': '⚡',
+  'Geografia': '🌍',
+  'Filosofia': '💭',
+  'Artes': '🎨',
+  'Espanhol': '🇪🇸',
+  'Inglês': '🇬🇧',
+}
+
 function App() {
+  const [currentView, setCurrentView] = useState('home') // home, questions, stats
   const [currentIndex, setCurrentIndex] = useState(0)
   const [selectedAnswer, setSelectedAnswer] = useState(null)
   const [showResult, setShowResult] = useState(false)
+  const [searchQuery, setSearchQuery] = useState('')
   const [darkMode, setDarkMode] = useState(() => {
     const saved = localStorage.getItem('pas-dark-mode')
     return saved ? JSON.parse(saved) : false
@@ -14,18 +50,35 @@ function App() {
     return saved ? JSON.parse(saved) : { correct: 0, wrong: 0, answered: [] }
   })
   const [filters, setFilters] = useState({ year: 'all', subject: 'all' })
-  const [showStats, setShowStats] = useState(false)
-  const [studyMode, setStudyMode] = useState('practice') // practice, exam
+  const [sidebarOpen, setSidebarOpen] = useState(false)
 
   const filteredQuestions = questions.filter(q => {
     if (filters.year !== 'all' && q.year !== parseInt(filters.year)) return false
     if (filters.subject !== 'all' && q.subject !== filters.subject) return false
+    if (searchQuery) {
+      const query = searchQuery.toLowerCase()
+      return q.statement?.toLowerCase().includes(query) || q.subject.toLowerCase().includes(query)
+    }
     return true
   })
 
   const question = filteredQuestions[currentIndex]
   const years = [...new Set(questions.map(q => q.year))].sort((a, b) => b - a)
   const subjects = [...new Set(questions.map(q => q.subject))].sort()
+
+  // Stats by subject
+  const statsBySubject = subjects.map(subject => {
+    const subjectQuestions = questions.filter(q => q.subject === subject)
+    const answered = stats.answered.filter(a => subjectQuestions.some(q => q.id === a.id))
+    const correct = answered.filter(a => a.correct).length
+    return {
+      subject,
+      total: subjectQuestions.length,
+      answered: answered.length,
+      correct,
+      percentage: answered.length > 0 ? Math.round((correct / answered.length) * 100) : 0
+    }
+  })
 
   useEffect(() => {
     localStorage.setItem('pas-stats', JSON.stringify(stats))
@@ -44,61 +97,34 @@ function App() {
   useEffect(() => {
     const handleKeyDown = (e) => {
       if (e.target.tagName === 'INPUT' || e.target.tagName === 'SELECT') return
+      if (currentView !== 'questions') return
       
       switch(e.key) {
-        case 'ArrowRight':
-          nextQuestion()
-          break
-        case 'ArrowLeft':
-          prevQuestion()
-          break
-        case 'c':
-        case 'C':
-          if (question?.type === 'C' && !showResult) handleAnswer('C')
-          break
-        case 'e':
-        case 'E':
-          if (question?.type === 'C' && !showResult) handleAnswer('E')
-          break
-        case 'a':
-        case 'A':
-          if (question?.type === 'A' && !showResult) handleAnswer('A')
-          break
-        case 'b':
-        case 'B':
-          if (question?.type === 'A' && !showResult) handleAnswer('B')
-          break
-        case 'd':
-        case 'D':
-          if (question?.type === 'A' && !showResult) handleAnswer('D')
-          break
+        case 'ArrowRight': nextQuestion(); break
+        case 'ArrowLeft': prevQuestion(); break
+        case 'c': case 'C': if (question?.type === 'C' && !showResult) handleAnswer('C'); break
+        case 'e': case 'E': if (question?.type === 'C' && !showResult) handleAnswer('E'); break
+        case 'a': case 'A': if (question?.type === 'A' && !showResult) handleAnswer('A'); break
+        case 'b': case 'B': if (question?.type === 'A' && !showResult) handleAnswer('B'); break
+        case 'd': case 'D': if (question?.type === 'A' && !showResult) handleAnswer('D'); break
+        case 'Escape': setCurrentView('home'); break
       }
     }
-    
     window.addEventListener('keydown', handleKeyDown)
     return () => window.removeEventListener('keydown', handleKeyDown)
-  }, [question, showResult])
+  }, [question, showResult, currentView])
 
   const handleAnswer = (answer) => {
     if (showResult) return
     setSelectedAnswer(answer)
     setShowResult(true)
-    
     const isCorrect = answer === question.correctAnswer
-
-    if (isCorrect) {
-      setStats(s => ({ 
-        ...s, 
-        correct: s.correct + 1,
-        answered: [...s.answered, { id: question.id, correct: true }]
-      }))
-    } else {
-      setStats(s => ({ 
-        ...s, 
-        wrong: s.wrong + 1,
-        answered: [...s.answered, { id: question.id, correct: false }]
-      }))
-    }
+    setStats(s => ({ 
+      ...s, 
+      correct: s.correct + (isCorrect ? 1 : 0),
+      wrong: s.wrong + (isCorrect ? 0 : 1),
+      answered: [...s.answered, { id: question.id, correct: isCorrect }]
+    }))
   }
 
   const nextQuestion = () => {
@@ -113,526 +139,620 @@ function App() {
     setCurrentIndex(i => (i - 1 + filteredQuestions.length) % filteredQuestions.length)
   }
 
-  const resetStats = () => {
-    setStats({ correct: 0, wrong: 0, answered: [] })
-  }
-
-  const goToQuestion = (index) => {
+  const startStudy = (subject = 'all', year = 'all') => {
+    setFilters({ subject, year })
+    setCurrentIndex(0)
     setSelectedAnswer(null)
     setShowResult(false)
-    setCurrentIndex(index)
+    setCurrentView('questions')
   }
 
   const total = stats.correct + stats.wrong
   const percentage = total > 0 ? Math.round((stats.correct / total) * 100) : 0
 
-  // Stats by subject
-  const statsBySubject = subjects.map(subject => {
-    const subjectQuestions = questions.filter(q => q.subject === subject)
-    const answered = stats.answered.filter(a => 
-      subjectQuestions.some(q => q.id === a.id)
-    )
-    const correct = answered.filter(a => a.correct).length
-    return {
-      subject,
-      total: subjectQuestions.length,
-      answered: answered.length,
-      correct,
-      percentage: answered.length > 0 ? Math.round((correct / answered.length) * 100) : 0
-    }
-  })
-
-  if (!question) {
-    return (
-      <div className={`min-h-screen flex items-center justify-center ${darkMode ? 'bg-gray-900 text-white' : 'bg-gradient-to-br from-blue-50 to-indigo-100'}`}>
-        <div className="text-center p-8">
-          <div className="text-6xl mb-4">🔍</div>
-          <p className="text-xl text-gray-500">Nenhuma questão encontrada com esses filtros.</p>
-          <button 
-            onClick={() => setFilters({ year: 'all', subject: 'all' })}
-            className="mt-4 px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
-          >
-            Limpar filtros
-          </button>
-        </div>
-      </div>
-    )
-  }
-
   return (
-    <div className={`min-h-screen transition-colors duration-300 ${darkMode ? 'bg-gray-900' : 'bg-gradient-to-br from-blue-50 via-white to-indigo-50'}`}>
+    <div className={`min-h-screen transition-colors duration-300 ${darkMode ? 'bg-gray-900' : 'bg-gray-50'}`}>
       {/* Header */}
-      <header className={`sticky top-0 z-50 backdrop-blur-lg ${darkMode ? 'bg-gray-800/90 border-gray-700' : 'bg-white/80 border-gray-200'} border-b shadow-sm`}>
-        <div className="max-w-6xl mx-auto px-4 py-3">
-          <div className="flex justify-between items-center">
-            <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-gradient-to-br from-blue-600 to-indigo-600 rounded-xl flex items-center justify-center shadow-lg">
+      <header className="bg-gradient-to-r from-slate-800 via-slate-900 to-slate-800 sticky top-0 z-50 shadow-xl">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="flex items-center h-16 gap-4">
+            {/* Logo */}
+            <button 
+              onClick={() => setCurrentView('home')}
+              className="flex items-center gap-2 shrink-0"
+            >
+              <div className="w-10 h-10 bg-gradient-to-br from-emerald-400 to-green-500 rounded-xl flex items-center justify-center shadow-lg">
                 <span className="text-white font-bold text-sm">PAS</span>
               </div>
-              <div>
-                <h1 className={`text-lg font-bold ${darkMode ? 'text-white' : 'text-gray-800'}`}>Estude PAS</h1>
-                <p className={`text-xs ${darkMode ? 'text-gray-400' : 'text-gray-500'}`}>UnB - 1ª Etapa</p>
+              <div className="hidden sm:block">
+                <h1 className="text-white font-bold text-lg leading-tight">Estude PAS</h1>
+                <p className="text-gray-400 text-xs">UnB 2026</p>
+              </div>
+            </button>
+
+            {/* Search Bar */}
+            <div className="flex-1 max-w-2xl">
+              <div className="flex">
+                <button className="px-4 py-2 bg-gray-700 text-gray-300 text-sm rounded-l-lg border-r border-gray-600 hover:bg-gray-600 transition-colors">
+                  Todos
+                </button>
+                <input
+                  type="text"
+                  placeholder="Pesquisar questões, matérias..."
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  onKeyDown={(e) => e.key === 'Enter' && searchQuery && startStudy()}
+                  className="flex-1 px-4 py-2 bg-white text-gray-800 focus:outline-none focus:ring-2 focus:ring-emerald-400"
+                />
+                <button 
+                  onClick={() => searchQuery && startStudy()}
+                  className="px-6 py-2 bg-gradient-to-r from-emerald-400 to-green-500 text-white rounded-r-lg hover:from-emerald-500 hover:to-green-600 transition-all"
+                >
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                  </svg>
+                </button>
               </div>
             </div>
-            
+
+            {/* Right Actions */}
             <div className="flex items-center gap-2">
-              {/* Stats Button */}
-              <button 
-                onClick={() => setShowStats(!showStats)}
-                className={`p-2 rounded-lg transition-colors ${darkMode ? 'hover:bg-gray-700 text-gray-300' : 'hover:bg-gray-100 text-gray-600'}`}
-                title="Estatísticas"
-              >
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
-                </svg>
-              </button>
-              
-              {/* Dark Mode Toggle */}
+              {/* Stats */}
+              <div className="hidden md:flex items-center gap-2 px-3 py-1.5 bg-gray-700/50 rounded-lg">
+                <span className="text-green-400 font-semibold">{stats.correct}</span>
+                <span className="text-gray-500">/</span>
+                <span className="text-red-400 font-semibold">{stats.wrong}</span>
+                {total > 0 && (
+                  <span className={`ml-1 px-2 py-0.5 rounded text-xs font-bold ${
+                    percentage >= 70 ? 'bg-green-500/20 text-green-400' : 
+                    percentage >= 50 ? 'bg-yellow-500/20 text-yellow-400' : 'bg-red-500/20 text-red-400'
+                  }`}>
+                    {percentage}%
+                  </span>
+                )}
+              </div>
+
+              {/* Dark Mode */}
               <button 
                 onClick={() => setDarkMode(!darkMode)}
-                className={`p-2 rounded-lg transition-colors ${darkMode ? 'hover:bg-gray-700 text-yellow-400' : 'hover:bg-gray-100 text-gray-600'}`}
-                title={darkMode ? 'Modo claro' : 'Modo escuro'}
+                className="p-2 rounded-lg bg-gray-700/50 hover:bg-gray-600 transition-colors"
               >
                 {darkMode ? (
-                  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                  <svg className="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" clipRule="evenodd" />
                   </svg>
                 ) : (
-                  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                  <svg className="w-5 h-5 text-gray-300" fill="currentColor" viewBox="0 0 20 20">
                     <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" />
                   </svg>
                 )}
               </button>
             </div>
           </div>
+        </div>
 
-          {/* Quick Stats Bar */}
-          <div className="flex items-center gap-4 mt-3 pb-1">
-            <div className="flex items-center gap-2">
-              <div className={`flex items-center gap-1.5 px-3 py-1.5 rounded-full text-sm font-medium ${darkMode ? 'bg-green-900/50 text-green-400' : 'bg-green-100 text-green-700'}`}>
-                <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                  <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                </svg>
-                {stats.correct}
-              </div>
-              <div className={`flex items-center gap-1.5 px-3 py-1.5 rounded-full text-sm font-medium ${darkMode ? 'bg-red-900/50 text-red-400' : 'bg-red-100 text-red-700'}`}>
-                <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                  <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clipRule="evenodd" />
-                </svg>
-                {stats.wrong}
-              </div>
-            </div>
-            
-            {/* Progress Bar */}
-            <div className="flex-1 flex items-center gap-2">
-              <div className={`flex-1 h-2 rounded-full overflow-hidden ${darkMode ? 'bg-gray-700' : 'bg-gray-200'}`}>
-                <div 
-                  className="h-full bg-gradient-to-r from-blue-500 to-indigo-500 transition-all duration-500"
-                  style={{ width: `${(currentIndex + 1) / filteredQuestions.length * 100}%` }}
-                />
-              </div>
-              <span className={`text-xs font-medium ${darkMode ? 'text-gray-400' : 'text-gray-500'}`}>
-                {currentIndex + 1}/{filteredQuestions.length}
-              </span>
-            </div>
-
-            {total > 0 && (
-              <div className={`px-3 py-1.5 rounded-full text-sm font-bold ${
-                percentage >= 70 
-                  ? darkMode ? 'bg-blue-900/50 text-blue-400' : 'bg-blue-100 text-blue-700'
-                  : percentage >= 50 
-                    ? darkMode ? 'bg-yellow-900/50 text-yellow-400' : 'bg-yellow-100 text-yellow-700'
-                    : darkMode ? 'bg-orange-900/50 text-orange-400' : 'bg-orange-100 text-orange-700'
-              }`}>
-                {percentage}%
-              </div>
-            )}
+        {/* Navigation Tabs */}
+        <div className="bg-slate-700/50 border-t border-slate-600/50">
+          <div className="max-w-7xl mx-auto px-4">
+            <nav className="flex items-center gap-1 overflow-x-auto py-2 text-sm">
+              <button 
+                onClick={() => setCurrentView('home')}
+                className={`px-4 py-1.5 rounded-lg whitespace-nowrap transition-colors ${
+                  currentView === 'home' 
+                    ? 'bg-emerald-500 text-white' 
+                    : 'text-gray-300 hover:bg-slate-600'
+                }`}
+              >
+                🏠 Início
+              </button>
+              <button 
+                onClick={() => startStudy()}
+                className={`px-4 py-1.5 rounded-lg whitespace-nowrap transition-colors ${
+                  currentView === 'questions' 
+                    ? 'bg-emerald-500 text-white' 
+                    : 'text-gray-300 hover:bg-slate-600'
+                }`}
+              >
+                📝 Questões
+              </button>
+              {subjects.slice(0, 6).map(subject => (
+                <button 
+                  key={subject}
+                  onClick={() => startStudy(subject)}
+                  className="px-4 py-1.5 rounded-lg whitespace-nowrap text-gray-300 hover:bg-slate-600 transition-colors"
+                >
+                  {subjectIcons[subject] || '📖'} {subject}
+                </button>
+              ))}
+              <button 
+                onClick={() => setCurrentView('stats')}
+                className={`px-4 py-1.5 rounded-lg whitespace-nowrap transition-colors ${
+                  currentView === 'stats' 
+                    ? 'bg-emerald-500 text-white' 
+                    : 'text-gray-300 hover:bg-slate-600'
+                }`}
+              >
+                📊 Estatísticas
+              </button>
+            </nav>
           </div>
         </div>
       </header>
 
-      {/* Stats Modal */}
-      {showStats && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm" onClick={() => setShowStats(false)}>
-          <div 
-            className={`w-full max-w-lg max-h-[80vh] overflow-auto rounded-2xl shadow-2xl ${darkMode ? 'bg-gray-800' : 'bg-white'}`}
-            onClick={e => e.stopPropagation()}
+      {/* Sidebar */}
+      <div className="fixed right-0 top-1/2 -translate-y-1/2 z-40 hidden lg:flex flex-col gap-2 p-2">
+        {[
+          { icon: '📚', label: 'Matérias', view: 'home' },
+          { icon: '📝', label: 'Provas', action: () => startStudy() },
+          { icon: '📊', label: 'Stats', view: 'stats' },
+        ].map((item, i) => (
+          <button
+            key={i}
+            onClick={() => item.view ? setCurrentView(item.view) : item.action?.()}
+            className={`flex flex-col items-center gap-1 p-3 rounded-xl transition-all ${
+              darkMode 
+                ? 'bg-gray-800 hover:bg-gray-700 text-gray-300' 
+                : 'bg-white hover:bg-gray-50 text-gray-600 shadow-lg'
+            }`}
           >
-            <div className={`sticky top-0 p-4 border-b ${darkMode ? 'bg-gray-800 border-gray-700' : 'bg-white border-gray-200'}`}>
-              <div className="flex justify-between items-center">
-                <h2 className={`text-xl font-bold ${darkMode ? 'text-white' : 'text-gray-800'}`}>Suas Estatísticas</h2>
+            <span className="text-xl">{item.icon}</span>
+            <span className="text-xs font-medium">{item.label}</span>
+          </button>
+        ))}
+      </div>
+
+      {/* Main Content */}
+      <main className="max-w-7xl mx-auto px-4 py-6">
+        {currentView === 'home' && (
+          <div className="space-y-8">
+            {/* Hero Banner */}
+            <div className={`relative overflow-hidden rounded-2xl ${darkMode ? 'bg-gradient-to-r from-emerald-900 to-teal-900' : 'bg-gradient-to-r from-emerald-500 to-teal-500'} p-8 text-white`}>
+              <div className="relative z-10">
+                <h2 className="text-3xl font-bold mb-2">Bem-vindo ao Estude PAS! 🎓</h2>
+                <p className="text-emerald-100 mb-4 max-w-xl">
+                  Prepare-se para o PAS da UnB com questões das provas oficiais. 
+                  Pratique por matéria, acompanhe seu progresso e alcance sua vaga!
+                </p>
                 <button 
-                  onClick={() => setShowStats(false)}
-                  className={`p-2 rounded-lg ${darkMode ? 'hover:bg-gray-700 text-gray-400' : 'hover:bg-gray-100 text-gray-500'}`}
+                  onClick={() => startStudy()}
+                  className="px-6 py-3 bg-white text-emerald-600 font-semibold rounded-xl hover:bg-emerald-50 transition-colors shadow-lg"
                 >
-                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                  </svg>
+                  Começar a Estudar →
                 </button>
               </div>
+              <div className="absolute right-0 top-0 w-64 h-full opacity-10">
+                <svg viewBox="0 0 200 200" className="w-full h-full">
+                  <path fill="currentColor" d="M47.5,-57.5C59.3,-45.8,65.2,-28.7,67.8,-11.1C70.4,6.5,69.6,24.7,61.3,38.5C53,52.3,37.1,61.8,19.8,67.5C2.5,73.3,-16.2,75.3,-32.8,69.8C-49.4,64.3,-63.8,51.3,-71.3,35.1C-78.8,18.9,-79.3,-0.5,-73.3,-17.3C-67.3,-34.1,-54.8,-48.3,-40.3,-59.3C-25.8,-70.3,-9.3,-78.1,4.8,-83.8C18.9,-89.5,35.7,-69.1,47.5,-57.5Z" transform="translate(100 100)" />
+                </svg>
+              </div>
             </div>
-            
-            <div className="p-4 space-y-4">
-              {/* Overall Stats */}
-              <div className={`p-4 rounded-xl ${darkMode ? 'bg-gray-700/50' : 'bg-gradient-to-r from-blue-50 to-indigo-50'}`}>
-                <h3 className={`text-sm font-medium mb-3 ${darkMode ? 'text-gray-400' : 'text-gray-500'}`}>Desempenho Geral</h3>
-                <div className="grid grid-cols-3 gap-4 text-center">
-                  <div>
-                    <div className={`text-2xl font-bold ${darkMode ? 'text-green-400' : 'text-green-600'}`}>{stats.correct}</div>
-                    <div className={`text-xs ${darkMode ? 'text-gray-400' : 'text-gray-500'}`}>Acertos</div>
+
+            {/* Quick Stats */}
+            {total > 0 && (
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                {[
+                  { label: 'Questões', value: total, icon: '📝', color: 'blue' },
+                  { label: 'Acertos', value: stats.correct, icon: '✅', color: 'green' },
+                  { label: 'Erros', value: stats.wrong, icon: '❌', color: 'red' },
+                  { label: 'Taxa', value: `${percentage}%`, icon: '📊', color: percentage >= 70 ? 'green' : percentage >= 50 ? 'yellow' : 'red' },
+                ].map((stat, i) => (
+                  <div key={i} className={`p-4 rounded-xl ${darkMode ? 'bg-gray-800' : 'bg-white'} shadow-lg`}>
+                    <div className="flex items-center gap-3">
+                      <span className="text-2xl">{stat.icon}</span>
+                      <div>
+                        <p className={`text-2xl font-bold ${darkMode ? 'text-white' : 'text-gray-800'}`}>{stat.value}</p>
+                        <p className={`text-sm ${darkMode ? 'text-gray-400' : 'text-gray-500'}`}>{stat.label}</p>
+                      </div>
+                    </div>
                   </div>
-                  <div>
-                    <div className={`text-2xl font-bold ${darkMode ? 'text-red-400' : 'text-red-600'}`}>{stats.wrong}</div>
-                    <div className={`text-xs ${darkMode ? 'text-gray-400' : 'text-gray-500'}`}>Erros</div>
+                ))}
+              </div>
+            )}
+
+            {/* Study by Subject */}
+            <section>
+              <div className="flex items-center justify-between mb-4">
+                <h3 className={`text-xl font-bold ${darkMode ? 'text-white' : 'text-gray-800'}`}>
+                  📚 Estudar por Matéria
+                </h3>
+                <button className={`text-sm ${darkMode ? 'text-emerald-400' : 'text-emerald-600'} hover:underline`}>
+                  Ver todas →
+                </button>
+              </div>
+              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
+                {subjects.map(subject => {
+                  const colors = getSubjectColor(subject)
+                  const subjectStats = statsBySubject.find(s => s.subject === subject)
+                  const count = questions.filter(q => q.subject === subject).length
+                  return (
+                    <button
+                      key={subject}
+                      onClick={() => startStudy(subject)}
+                      className={`group relative p-4 rounded-xl ${darkMode ? 'bg-gray-800 hover:bg-gray-700' : 'bg-white hover:shadow-xl'} shadow-lg transition-all hover:scale-105`}
+                    >
+                      <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${colors.gradient} flex items-center justify-center text-2xl mb-3 group-hover:scale-110 transition-transform`}>
+                        {subjectIcons[subject] || '📖'}
+                      </div>
+                      <h4 className={`font-semibold text-sm mb-1 ${darkMode ? 'text-white' : 'text-gray-800'}`}>
+                        {subject}
+                      </h4>
+                      <p className={`text-xs ${darkMode ? 'text-gray-400' : 'text-gray-500'}`}>
+                        {count} questões
+                      </p>
+                      {subjectStats && subjectStats.answered > 0 && (
+                        <div className="mt-2">
+                          <div className={`h-1.5 rounded-full overflow-hidden ${darkMode ? 'bg-gray-700' : 'bg-gray-200'}`}>
+                            <div 
+                              className={`h-full bg-gradient-to-r ${colors.gradient}`}
+                              style={{ width: `${(subjectStats.answered / subjectStats.total) * 100}%` }}
+                            />
+                          </div>
+                          <p className={`text-xs mt-1 ${darkMode ? 'text-gray-500' : 'text-gray-400'}`}>
+                            {subjectStats.percentage}% acertos
+                          </p>
+                        </div>
+                      )}
+                    </button>
+                  )
+                })}
+              </div>
+            </section>
+
+            {/* Study by Year */}
+            <section>
+              <div className="flex items-center justify-between mb-4">
+                <h3 className={`text-xl font-bold ${darkMode ? 'text-white' : 'text-gray-800'}`}>
+                  📅 Provas Anteriores
+                </h3>
+              </div>
+              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
+                {years.map(year => {
+                  const yearQuestions = questions.filter(q => q.year === year)
+                  const yearAnswered = stats.answered.filter(a => yearQuestions.some(q => q.id === a.id))
+                  const progress = yearQuestions.length > 0 ? Math.round((yearAnswered.length / yearQuestions.length) * 100) : 0
+                  return (
+                    <button
+                      key={year}
+                      onClick={() => startStudy('all', year)}
+                      className={`group p-4 rounded-xl ${darkMode ? 'bg-gray-800 hover:bg-gray-700' : 'bg-white hover:shadow-xl'} shadow-lg transition-all hover:scale-105`}
+                    >
+                      <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-indigo-500 to-purple-500 flex items-center justify-center text-white font-bold mb-3 group-hover:scale-110 transition-transform">
+                        {year.toString().slice(2)}
+                      </div>
+                      <h4 className={`font-semibold mb-1 ${darkMode ? 'text-white' : 'text-gray-800'}`}>
+                        PAS {year}
+                      </h4>
+                      <p className={`text-xs ${darkMode ? 'text-gray-400' : 'text-gray-500'}`}>
+                        {yearQuestions.length} questões
+                      </p>
+                      {progress > 0 && (
+                        <div className="mt-2">
+                          <div className={`h-1.5 rounded-full overflow-hidden ${darkMode ? 'bg-gray-700' : 'bg-gray-200'}`}>
+                            <div 
+                              className="h-full bg-gradient-to-r from-indigo-500 to-purple-500"
+                              style={{ width: `${progress}%` }}
+                            />
+                          </div>
+                          <p className={`text-xs mt-1 ${darkMode ? 'text-gray-500' : 'text-gray-400'}`}>
+                            {progress}% concluído
+                          </p>
+                        </div>
+                      )}
+                    </button>
+                  )
+                })}
+              </div>
+            </section>
+
+            {/* Recent Activity / Continue Studying */}
+            {stats.answered.length > 0 && (
+              <section>
+                <div className="flex items-center justify-between mb-4">
+                  <h3 className={`text-xl font-bold ${darkMode ? 'text-white' : 'text-gray-800'}`}>
+                    🔥 Continue Estudando
+                  </h3>
+                </div>
+                <div className={`p-6 rounded-xl ${darkMode ? 'bg-gray-800' : 'bg-white'} shadow-lg`}>
+                  <div className="flex items-center justify-between">
+                    <div>
+                      <p className={`text-lg font-semibold ${darkMode ? 'text-white' : 'text-gray-800'}`}>
+                        Você já respondeu {stats.answered.length} questões!
+                      </p>
+                      <p className={`text-sm ${darkMode ? 'text-gray-400' : 'text-gray-500'}`}>
+                        Continue praticando para melhorar seu desempenho.
+                      </p>
+                    </div>
+                    <button 
+                      onClick={() => startStudy()}
+                      className="px-6 py-3 bg-gradient-to-r from-emerald-500 to-green-500 text-white font-semibold rounded-xl hover:from-emerald-600 hover:to-green-600 transition-all shadow-lg"
+                    >
+                      Continuar →
+                    </button>
                   </div>
-                  <div>
-                    <div className={`text-2xl font-bold ${darkMode ? 'text-blue-400' : 'text-blue-600'}`}>{percentage}%</div>
-                    <div className={`text-xs ${darkMode ? 'text-gray-400' : 'text-gray-500'}`}>Taxa</div>
-                  </div>
+                </div>
+              </section>
+            )}
+          </div>
+        )}
+
+        {currentView === 'questions' && question && (
+          <div className="max-w-3xl mx-auto">
+            {/* Question Navigation */}
+            <div className={`mb-6 p-4 rounded-xl ${darkMode ? 'bg-gray-800' : 'bg-white'} shadow-lg`}>
+              <div className="flex flex-wrap items-center gap-4 mb-4">
+                <button 
+                  onClick={() => setCurrentView('home')}
+                  className={`flex items-center gap-2 px-3 py-1.5 rounded-lg ${darkMode ? 'bg-gray-700 hover:bg-gray-600 text-gray-300' : 'bg-gray-100 hover:bg-gray-200 text-gray-600'}`}
+                >
+                  ← Voltar
+                </button>
+                <select
+                  value={filters.subject}
+                  onChange={(e) => { setFilters(f => ({ ...f, subject: e.target.value })); setCurrentIndex(0); }}
+                  className={`px-3 py-1.5 rounded-lg border ${darkMode ? 'bg-gray-700 border-gray-600 text-white' : 'bg-white border-gray-200'}`}
+                >
+                  <option value="all">Todas as matérias</option>
+                  {subjects.map(s => <option key={s} value={s}>{s}</option>)}
+                </select>
+                <select
+                  value={filters.year}
+                  onChange={(e) => { setFilters(f => ({ ...f, year: e.target.value })); setCurrentIndex(0); }}
+                  className={`px-3 py-1.5 rounded-lg border ${darkMode ? 'bg-gray-700 border-gray-600 text-white' : 'bg-white border-gray-200'}`}
+                >
+                  <option value="all">Todos os anos</option>
+                  {years.map(y => <option key={y} value={y}>{y}</option>)}
+                </select>
+                <span className={`ml-auto text-sm ${darkMode ? 'text-gray-400' : 'text-gray-500'}`}>
+                  {currentIndex + 1} de {filteredQuestions.length}
+                </span>
+              </div>
+              
+              {/* Progress Bar */}
+              <div className={`h-2 rounded-full overflow-hidden ${darkMode ? 'bg-gray-700' : 'bg-gray-200'}`}>
+                <div 
+                  className="h-full bg-gradient-to-r from-emerald-500 to-green-500 transition-all duration-300"
+                  style={{ width: `${((currentIndex + 1) / filteredQuestions.length) * 100}%` }}
+                />
+              </div>
+            </div>
+
+            {/* Question Card */}
+            <div className={`rounded-2xl overflow-hidden shadow-xl ${darkMode ? 'bg-gray-800' : 'bg-white'}`}>
+              {/* Header */}
+              <div className={`px-6 py-4 border-b ${darkMode ? 'border-gray-700' : 'border-gray-100'}`}>
+                <div className="flex flex-wrap items-center gap-2">
+                  <span className={`px-3 py-1 rounded-full text-xs font-semibold bg-gradient-to-r ${getSubjectColor(question.subject).gradient} text-white`}>
+                    {subjectIcons[question.subject]} {question.subject}
+                  </span>
+                  <span className={`px-3 py-1 rounded-full text-xs font-semibold ${darkMode ? 'bg-gray-700 text-gray-300' : 'bg-gray-100 text-gray-600'}`}>
+                    {question.year}
+                  </span>
+                  <span className={`px-3 py-1 rounded-full text-xs font-semibold ${darkMode ? 'bg-gray-700 text-gray-300' : 'bg-gray-100 text-gray-600'}`}>
+                    Q{question.questionNumber}
+                  </span>
+                  <span className={`ml-auto px-2 py-1 rounded text-xs font-medium ${
+                    question.type === 'C' 
+                      ? 'bg-amber-100 text-amber-700' 
+                      : 'bg-indigo-100 text-indigo-700'
+                  }`}>
+                    {question.type === 'C' ? 'Certo/Errado' : 'Múltipla Escolha'}
+                  </span>
                 </div>
               </div>
 
-              {/* Stats by Subject */}
-              <div>
-                <h3 className={`text-sm font-medium mb-3 ${darkMode ? 'text-gray-400' : 'text-gray-500'}`}>Por Matéria</h3>
-                <div className="space-y-2">
-                  {statsBySubject.filter(s => s.answered > 0).map(stat => (
-                    <div key={stat.subject} className={`p-3 rounded-lg ${darkMode ? 'bg-gray-700/50' : 'bg-gray-50'}`}>
-                      <div className="flex justify-between items-center mb-2">
-                        <span className={`font-medium ${darkMode ? 'text-white' : 'text-gray-800'}`}>{stat.subject}</span>
-                        <span className={`text-sm ${
-                          stat.percentage >= 70 
-                            ? darkMode ? 'text-green-400' : 'text-green-600'
-                            : stat.percentage >= 50 
-                              ? darkMode ? 'text-yellow-400' : 'text-yellow-600'
-                              : darkMode ? 'text-red-400' : 'text-red-600'
+              {/* Content */}
+              <div className="p-6">
+                <div className={`text-lg leading-relaxed mb-8 whitespace-pre-line ${darkMode ? 'text-gray-200' : 'text-gray-700'}`}>
+                  {question.statement}
+                </div>
+
+                {/* Answers */}
+                {question.type === 'C' ? (
+                  <div className="grid grid-cols-2 gap-4">
+                    {[{ value: 'C', label: 'CERTO', icon: '✓' }, { value: 'E', label: 'ERRADO', icon: '✗' }].map(opt => (
+                      <button
+                        key={opt.value}
+                        onClick={() => handleAnswer(opt.value)}
+                        disabled={showResult}
+                        className={`py-5 text-xl font-bold rounded-xl transition-all duration-300 ${
+                          showResult
+                            ? opt.value === question.correctAnswer
+                              ? 'bg-gradient-to-r from-green-500 to-emerald-500 text-white shadow-lg scale-[1.02]'
+                              : selectedAnswer === opt.value
+                                ? 'bg-gradient-to-r from-red-500 to-rose-500 text-white'
+                                : darkMode ? 'bg-gray-700 text-gray-500' : 'bg-gray-100 text-gray-400'
+                            : darkMode 
+                              ? 'bg-gray-700 text-gray-200 hover:bg-gray-600'
+                              : 'bg-gray-50 text-gray-700 hover:bg-gray-100 hover:shadow-md'
+                        }`}
+                      >
+                        {opt.icon} {opt.label}
+                      </button>
+                    ))}
+                  </div>
+                ) : question.alternatives ? (
+                  <div className="space-y-3">
+                    {question.alternatives.map(alt => (
+                      <button
+                        key={alt.letter}
+                        onClick={() => handleAnswer(alt.letter)}
+                        disabled={showResult}
+                        className={`w-full text-left p-4 rounded-xl transition-all duration-300 ${
+                          showResult
+                            ? alt.letter === question.correctAnswer
+                              ? 'bg-gradient-to-r from-green-500 to-emerald-500 text-white shadow-lg'
+                              : selectedAnswer === alt.letter
+                                ? 'bg-gradient-to-r from-red-500 to-rose-500 text-white'
+                                : darkMode ? 'bg-gray-700/50 text-gray-500' : 'bg-gray-50 text-gray-400'
+                            : darkMode 
+                              ? 'bg-gray-700 text-gray-200 hover:bg-gray-600'
+                              : 'bg-gray-50 text-gray-700 hover:bg-gray-100 hover:shadow-md'
+                        }`}
+                      >
+                        <span className="flex items-start gap-3">
+                          <span className={`flex-shrink-0 w-8 h-8 rounded-lg flex items-center justify-center font-bold ${
+                            showResult && (alt.letter === question.correctAnswer || selectedAnswer === alt.letter)
+                              ? 'bg-white/20 text-white'
+                              : darkMode ? 'bg-gray-600 text-gray-300' : 'bg-gray-200 text-gray-600'
+                          }`}>
+                            {alt.letter}
+                          </span>
+                          <span className="pt-1">{alt.text}</span>
+                        </span>
+                      </button>
+                    ))}
+                  </div>
+                ) : null}
+
+                {/* Result */}
+                {showResult && (
+                  <div className={`mt-6 p-4 rounded-xl flex items-center gap-3 ${
+                    selectedAnswer === question.correctAnswer 
+                      ? 'bg-green-500/10 border border-green-500/30' 
+                      : 'bg-red-500/10 border border-red-500/30'
+                  }`}>
+                    <div className={`w-10 h-10 rounded-full flex items-center justify-center ${
+                      selectedAnswer === question.correctAnswer ? 'bg-green-500' : 'bg-red-500'
+                    }`}>
+                      {selectedAnswer === question.correctAnswer ? '✓' : '✗'}
+                    </div>
+                    <div>
+                      <p className={`font-semibold ${
+                        selectedAnswer === question.correctAnswer ? 'text-green-500' : 'text-red-500'
+                      }`}>
+                        {selectedAnswer === question.correctAnswer ? 'Correto!' : 'Incorreto'}
+                      </p>
+                      {selectedAnswer !== question.correctAnswer && (
+                        <p className={`text-sm ${darkMode ? 'text-gray-400' : 'text-gray-600'}`}>
+                          Resposta: <strong>{question.type === 'C' ? (question.correctAnswer === 'C' ? 'CERTO' : 'ERRADO') : question.correctAnswer}</strong>
+                        </p>
+                      )}
+                    </div>
+                  </div>
+                )}
+              </div>
+
+              {/* Footer */}
+              <div className={`px-6 py-4 border-t ${darkMode ? 'border-gray-700' : 'border-gray-100'} flex justify-between`}>
+                <button
+                  onClick={prevQuestion}
+                  className={`flex items-center gap-2 px-5 py-2.5 rounded-xl font-medium ${
+                    darkMode ? 'bg-gray-700 text-gray-300 hover:bg-gray-600' : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                  }`}
+                >
+                  ← Anterior
+                </button>
+                <button
+                  onClick={nextQuestion}
+                  className="flex items-center gap-2 px-6 py-2.5 bg-gradient-to-r from-emerald-500 to-green-500 text-white font-medium rounded-xl hover:from-emerald-600 hover:to-green-600 shadow-lg"
+                >
+                  Próxima →
+                </button>
+              </div>
+            </div>
+
+            {/* Shortcuts */}
+            <div className={`mt-6 p-4 rounded-xl ${darkMode ? 'bg-gray-800/50' : 'bg-white/50'} text-center`}>
+              <p className={`text-xs ${darkMode ? 'text-gray-500' : 'text-gray-400'}`}>
+                Atalhos: <kbd className={`px-2 py-0.5 rounded ${darkMode ? 'bg-gray-700' : 'bg-gray-100'}`}>←</kbd> <kbd className={`px-2 py-0.5 rounded ${darkMode ? 'bg-gray-700' : 'bg-gray-100'}`}>→</kbd> navegar • 
+                <kbd className={`px-2 py-0.5 rounded ${darkMode ? 'bg-gray-700' : 'bg-gray-100'}`}>C</kbd> <kbd className={`px-2 py-0.5 rounded ${darkMode ? 'bg-gray-700' : 'bg-gray-100'}`}>E</kbd> responder • 
+                <kbd className={`px-2 py-0.5 rounded ${darkMode ? 'bg-gray-700' : 'bg-gray-100'}`}>ESC</kbd> voltar
+              </p>
+            </div>
+          </div>
+        )}
+
+        {currentView === 'stats' && (
+          <div className="max-w-4xl mx-auto space-y-6">
+            <div className="flex items-center justify-between">
+              <h2 className={`text-2xl font-bold ${darkMode ? 'text-white' : 'text-gray-800'}`}>
+                📊 Suas Estatísticas
+              </h2>
+              <button 
+                onClick={() => setCurrentView('home')}
+                className={`px-4 py-2 rounded-lg ${darkMode ? 'bg-gray-800 text-gray-300' : 'bg-white text-gray-600'}`}
+              >
+                ← Voltar
+              </button>
+            </div>
+
+            {/* Overall Stats */}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+              {[
+                { label: 'Total', value: total, icon: '📝', gradient: 'from-blue-500 to-indigo-500' },
+                { label: 'Acertos', value: stats.correct, icon: '✅', gradient: 'from-green-500 to-emerald-500' },
+                { label: 'Erros', value: stats.wrong, icon: '❌', gradient: 'from-red-500 to-rose-500' },
+                { label: 'Taxa', value: `${percentage}%`, icon: '🎯', gradient: 'from-purple-500 to-pink-500' },
+              ].map((stat, i) => (
+                <div key={i} className={`p-6 rounded-xl ${darkMode ? 'bg-gray-800' : 'bg-white'} shadow-lg`}>
+                  <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${stat.gradient} flex items-center justify-center text-2xl mb-3`}>
+                    {stat.icon}
+                  </div>
+                  <p className={`text-3xl font-bold ${darkMode ? 'text-white' : 'text-gray-800'}`}>{stat.value}</p>
+                  <p className={`text-sm ${darkMode ? 'text-gray-400' : 'text-gray-500'}`}>{stat.label}</p>
+                </div>
+              ))}
+            </div>
+
+            {/* By Subject */}
+            <div className={`p-6 rounded-xl ${darkMode ? 'bg-gray-800' : 'bg-white'} shadow-lg`}>
+              <h3 className={`text-lg font-bold mb-4 ${darkMode ? 'text-white' : 'text-gray-800'}`}>
+                Desempenho por Matéria
+              </h3>
+              <div className="space-y-4">
+                {statsBySubject.map(stat => {
+                  const colors = getSubjectColor(stat.subject)
+                  return (
+                    <div key={stat.subject} className={`p-4 rounded-xl ${darkMode ? 'bg-gray-700/50' : 'bg-gray-50'}`}>
+                      <div className="flex items-center justify-between mb-2">
+                        <div className="flex items-center gap-2">
+                          <span className="text-xl">{subjectIcons[stat.subject]}</span>
+                          <span className={`font-medium ${darkMode ? 'text-white' : 'text-gray-800'}`}>{stat.subject}</span>
+                        </div>
+                        <span className={`text-sm font-semibold ${
+                          stat.answered === 0 ? (darkMode ? 'text-gray-500' : 'text-gray-400') :
+                          stat.percentage >= 70 ? 'text-green-500' : 
+                          stat.percentage >= 50 ? 'text-yellow-500' : 'text-red-500'
                         }`}>
-                          {stat.correct}/{stat.answered} ({stat.percentage}%)
+                          {stat.answered > 0 ? `${stat.correct}/${stat.answered} (${stat.percentage}%)` : 'Não iniciado'}
                         </span>
                       </div>
                       <div className={`h-2 rounded-full overflow-hidden ${darkMode ? 'bg-gray-600' : 'bg-gray-200'}`}>
                         <div 
-                          className={`h-full transition-all ${
-                            stat.percentage >= 70 ? 'bg-green-500' : stat.percentage >= 50 ? 'bg-yellow-500' : 'bg-red-500'
-                          }`}
-                          style={{ width: `${stat.percentage}%` }}
+                          className={`h-full bg-gradient-to-r ${colors.gradient} transition-all`}
+                          style={{ width: `${stat.answered > 0 ? (stat.answered / stat.total) * 100 : 0}%` }}
                         />
                       </div>
+                      <p className={`text-xs mt-1 ${darkMode ? 'text-gray-500' : 'text-gray-400'}`}>
+                        {stat.answered} de {stat.total} questões respondidas
+                      </p>
                     </div>
-                  ))}
-                  {statsBySubject.filter(s => s.answered > 0).length === 0 && (
-                    <p className={`text-center py-4 ${darkMode ? 'text-gray-500' : 'text-gray-400'}`}>
-                      Responda algumas questões para ver suas estatísticas
-                    </p>
-                  )}
-                </div>
+                  )
+                })}
               </div>
-
-              {/* Reset Button */}
-              <button
-                onClick={() => { resetStats(); setShowStats(false); }}
-                className={`w-full py-3 rounded-lg font-medium transition-colors ${
-                  darkMode ? 'bg-red-900/50 text-red-400 hover:bg-red-900' : 'bg-red-50 text-red-600 hover:bg-red-100'
-                }`}
-              >
-                Zerar Estatísticas
-              </button>
             </div>
-          </div>
-        </div>
-      )}
 
-      <main className="max-w-4xl mx-auto px-4 py-6">
-        {/* Filters */}
-        <div className={`flex flex-wrap gap-3 mb-6 p-4 rounded-xl ${darkMode ? 'bg-gray-800/50' : 'bg-white/50'} backdrop-blur-sm`}>
-          <div className="flex-1 min-w-[140px]">
-            <label className={`block text-xs font-medium mb-1.5 ${darkMode ? 'text-gray-400' : 'text-gray-500'}`}>Ano</label>
-            <select
-              value={filters.year}
-              onChange={(e) => { setFilters(f => ({ ...f, year: e.target.value })); setCurrentIndex(0); setSelectedAnswer(null); setShowResult(false); }}
-              className={`w-full px-3 py-2 rounded-lg border transition-colors ${
-                darkMode 
-                  ? 'bg-gray-700 border-gray-600 text-white focus:border-blue-500' 
-                  : 'bg-white border-gray-200 text-gray-800 focus:border-blue-500'
-              } focus:outline-none focus:ring-2 focus:ring-blue-500/20`}
+            {/* Reset */}
+            <button
+              onClick={() => { 
+                setStats({ correct: 0, wrong: 0, answered: [] })
+                setCurrentView('home')
+              }}
+              className={`w-full py-4 rounded-xl font-medium ${
+                darkMode ? 'bg-red-900/30 text-red-400 hover:bg-red-900/50' : 'bg-red-50 text-red-600 hover:bg-red-100'
+              }`}
             >
-              <option value="all">Todos os anos</option>
-              {years.map(y => <option key={y} value={y}>{y}</option>)}
-            </select>
+              🗑️ Zerar Estatísticas
+            </button>
           </div>
-          
-          <div className="flex-1 min-w-[140px]">
-            <label className={`block text-xs font-medium mb-1.5 ${darkMode ? 'text-gray-400' : 'text-gray-500'}`}>Matéria</label>
-            <select
-              value={filters.subject}
-              onChange={(e) => { setFilters(f => ({ ...f, subject: e.target.value })); setCurrentIndex(0); setSelectedAnswer(null); setShowResult(false); }}
-              className={`w-full px-3 py-2 rounded-lg border transition-colors ${
-                darkMode 
-                  ? 'bg-gray-700 border-gray-600 text-white focus:border-blue-500' 
-                  : 'bg-white border-gray-200 text-gray-800 focus:border-blue-500'
-              } focus:outline-none focus:ring-2 focus:ring-blue-500/20`}
-            >
-              <option value="all">Todas as matérias</option>
-              {subjects.map(s => <option key={s} value={s}>{s}</option>)}
-            </select>
-          </div>
-
-          {/* Question Navigator */}
-          <div className="w-full pt-2">
-            <div className="flex flex-wrap gap-1">
-              {filteredQuestions.slice(0, 20).map((q, i) => {
-                const wasAnswered = stats.answered.find(a => a.id === q.id)
-                return (
-                  <button
-                    key={q.id}
-                    onClick={() => goToQuestion(i)}
-                    className={`w-8 h-8 text-xs font-medium rounded-lg transition-all ${
-                      i === currentIndex
-                        ? 'bg-blue-600 text-white shadow-lg scale-110'
-                        : wasAnswered
-                          ? wasAnswered.correct
-                            ? darkMode ? 'bg-green-900/50 text-green-400' : 'bg-green-100 text-green-700'
-                            : darkMode ? 'bg-red-900/50 text-red-400' : 'bg-red-100 text-red-700'
-                          : darkMode ? 'bg-gray-700 text-gray-400 hover:bg-gray-600' : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
-                    }`}
-                  >
-                    {i + 1}
-                  </button>
-                )
-              })}
-              {filteredQuestions.length > 20 && (
-                <span className={`w-8 h-8 flex items-center justify-center text-xs ${darkMode ? 'text-gray-500' : 'text-gray-400'}`}>
-                  +{filteredQuestions.length - 20}
-                </span>
-              )}
-            </div>
-          </div>
-        </div>
-
-        {/* Question Card */}
-        <div className={`rounded-2xl shadow-xl overflow-hidden ${darkMode ? 'bg-gray-800' : 'bg-white'}`}>
-          {/* Card Header */}
-          <div className={`px-6 py-4 border-b ${darkMode ? 'border-gray-700 bg-gray-800/50' : 'border-gray-100 bg-gray-50/50'}`}>
-            <div className="flex flex-wrap items-center justify-between gap-2">
-              <div className="flex items-center gap-2">
-                <span className={`px-3 py-1 rounded-full text-xs font-semibold ${
-                  darkMode ? 'bg-blue-900/50 text-blue-400' : 'bg-blue-100 text-blue-700'
-                }`}>
-                  {question.year}
-                </span>
-                <span className={`px-3 py-1 rounded-full text-xs font-semibold ${
-                  darkMode ? 'bg-purple-900/50 text-purple-400' : 'bg-purple-100 text-purple-700'
-                }`}>
-                  {question.subject}
-                </span>
-                <span className={`text-sm ${darkMode ? 'text-gray-400' : 'text-gray-500'}`}>
-                  Questão {question.questionNumber}
-                </span>
-              </div>
-              <span className={`px-2 py-0.5 rounded text-xs font-medium ${
-                question.type === 'C' 
-                  ? darkMode ? 'bg-amber-900/50 text-amber-400' : 'bg-amber-100 text-amber-700'
-                  : darkMode ? 'bg-indigo-900/50 text-indigo-400' : 'bg-indigo-100 text-indigo-700'
-              }`}>
-                {question.type === 'C' ? 'Certo/Errado' : 'Múltipla Escolha'}
-              </span>
-            </div>
-          </div>
-
-          {/* Question Content */}
-          <div className="p-6">
-            {question.imageUrl ? (
-              <img 
-                src={question.imageUrl} 
-                alt={`Questão ${question.questionNumber}`}
-                className="w-full rounded-xl mb-6 border border-gray-200"
-              />
-            ) : (
-              <div className={`text-lg leading-relaxed mb-8 whitespace-pre-line ${darkMode ? 'text-gray-200' : 'text-gray-700'}`}>
-                {question.statement}
-              </div>
-            )}
-
-            {/* Answer Options */}
-            {question.type === 'C' ? (
-              <div className="grid grid-cols-2 gap-4">
-                {[
-                  { value: 'C', label: 'CERTO', icon: '✓', color: 'green' },
-                  { value: 'E', label: 'ERRADO', icon: '✗', color: 'red' }
-                ].map(opt => (
-                  <button
-                    key={opt.value}
-                    onClick={() => handleAnswer(opt.value)}
-                    disabled={showResult}
-                    className={`relative py-6 text-xl font-bold rounded-xl transition-all duration-300 ${
-                      showResult
-                        ? opt.value === question.correctAnswer
-                          ? 'bg-gradient-to-r from-green-500 to-emerald-500 text-white shadow-lg shadow-green-500/30 scale-[1.02]'
-                          : selectedAnswer === opt.value
-                            ? 'bg-gradient-to-r from-red-500 to-rose-500 text-white shadow-lg shadow-red-500/30'
-                            : darkMode ? 'bg-gray-700 text-gray-500' : 'bg-gray-100 text-gray-400'
-                        : darkMode 
-                          ? 'bg-gray-700 text-gray-200 hover:bg-gray-600 hover:scale-[1.02] active:scale-[0.98]'
-                          : 'bg-gray-50 text-gray-700 hover:bg-gray-100 hover:shadow-md hover:scale-[1.02] active:scale-[0.98]'
-                    } border-2 ${
-                      showResult && opt.value === question.correctAnswer
-                        ? 'border-green-400'
-                        : showResult && selectedAnswer === opt.value && opt.value !== question.correctAnswer
-                          ? 'border-red-400'
-                          : darkMode ? 'border-gray-600' : 'border-gray-200'
-                    }`}
-                  >
-                    <span className="flex items-center justify-center gap-2">
-                      <span className={`text-2xl ${opt.color === 'green' ? 'text-green-500' : 'text-red-500'}`}>{opt.icon}</span>
-                      {opt.label}
-                    </span>
-                  </button>
-                ))}
-              </div>
-            ) : question.alternatives ? (
-              <div className="space-y-3">
-                {question.alternatives.map(alt => (
-                  <button
-                    key={alt.letter}
-                    onClick={() => handleAnswer(alt.letter)}
-                    disabled={showResult}
-                    className={`w-full text-left p-4 rounded-xl transition-all duration-300 ${
-                      showResult
-                        ? alt.letter === question.correctAnswer
-                          ? 'bg-gradient-to-r from-green-500 to-emerald-500 text-white shadow-lg shadow-green-500/30'
-                          : selectedAnswer === alt.letter
-                            ? 'bg-gradient-to-r from-red-500 to-rose-500 text-white shadow-lg shadow-red-500/30'
-                            : darkMode ? 'bg-gray-700/50 text-gray-500' : 'bg-gray-50 text-gray-400'
-                        : darkMode 
-                          ? 'bg-gray-700 text-gray-200 hover:bg-gray-600 hover:scale-[1.01]'
-                          : 'bg-gray-50 text-gray-700 hover:bg-gray-100 hover:shadow-md hover:scale-[1.01]'
-                    } border-2 ${
-                      showResult && alt.letter === question.correctAnswer
-                        ? 'border-green-400'
-                        : showResult && selectedAnswer === alt.letter && alt.letter !== question.correctAnswer
-                          ? 'border-red-400'
-                          : darkMode ? 'border-gray-600' : 'border-gray-200'
-                    }`}
-                  >
-                    <span className="flex items-start gap-3">
-                      <span className={`flex-shrink-0 w-8 h-8 rounded-lg flex items-center justify-center font-bold ${
-                        showResult && alt.letter === question.correctAnswer
-                          ? 'bg-white/20 text-white'
-                          : showResult && selectedAnswer === alt.letter
-                            ? 'bg-white/20 text-white'
-                            : darkMode ? 'bg-gray-600 text-gray-300' : 'bg-gray-200 text-gray-600'
-                      }`}>
-                        {alt.letter}
-                      </span>
-                      <span className="pt-1">{alt.text}</span>
-                    </span>
-                  </button>
-                ))}
-              </div>
-            ) : null}
-
-            {/* Result Feedback */}
-            {showResult && (
-              <div className={`mt-6 p-4 rounded-xl flex items-center gap-3 ${
-                selectedAnswer === question.correctAnswer 
-                  ? darkMode ? 'bg-green-900/30 border border-green-800' : 'bg-green-50 border border-green-200'
-                  : darkMode ? 'bg-red-900/30 border border-red-800' : 'bg-red-50 border border-red-200'
-              }`}>
-                <div className={`w-10 h-10 rounded-full flex items-center justify-center ${
-                  selectedAnswer === question.correctAnswer 
-                    ? 'bg-green-500' 
-                    : 'bg-red-500'
-                }`}>
-                  {selectedAnswer === question.correctAnswer ? (
-                    <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
-                    </svg>
-                  ) : (
-                    <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M6 18L18 6M6 6l12 12" />
-                    </svg>
-                  )}
-                </div>
-                <div>
-                  <p className={`font-semibold ${
-                    selectedAnswer === question.correctAnswer 
-                      ? darkMode ? 'text-green-400' : 'text-green-700'
-                      : darkMode ? 'text-red-400' : 'text-red-700'
-                  }`}>
-                    {selectedAnswer === question.correctAnswer ? 'Resposta correta!' : 'Resposta incorreta'}
-                  </p>
-                  {selectedAnswer !== question.correctAnswer && (
-                    <p className={`text-sm ${darkMode ? 'text-gray-400' : 'text-gray-600'}`}>
-                      A resposta certa é: <strong>{question.type === 'C' ? (question.correctAnswer === 'C' ? 'CERTO' : 'ERRADO') : question.correctAnswer}</strong>
-                    </p>
-                  )}
-                </div>
-              </div>
-            )}
-          </div>
-
-          {/* Card Footer - Navigation */}
-          <div className={`px-6 py-4 border-t ${darkMode ? 'border-gray-700 bg-gray-800/50' : 'border-gray-100 bg-gray-50/50'}`}>
-            <div className="flex justify-between items-center">
-              <button
-                onClick={prevQuestion}
-                className={`flex items-center gap-2 px-4 py-2.5 rounded-xl font-medium transition-all ${
-                  darkMode 
-                    ? 'bg-gray-700 text-gray-300 hover:bg-gray-600' 
-                    : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
-                }`}
-              >
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-                </svg>
-                Anterior
-              </button>
-              
-              <button
-                onClick={nextQuestion}
-                className="flex items-center gap-2 px-6 py-2.5 bg-gradient-to-r from-blue-600 to-indigo-600 text-white rounded-xl font-medium shadow-lg shadow-blue-500/30 hover:shadow-xl hover:shadow-blue-500/40 hover:scale-[1.02] active:scale-[0.98] transition-all"
-              >
-                Próxima
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                </svg>
-              </button>
-            </div>
-          </div>
-        </div>
-
-        {/* Keyboard Shortcuts Hint */}
-        <div className={`mt-6 p-4 rounded-xl ${darkMode ? 'bg-gray-800/50' : 'bg-white/50'} backdrop-blur-sm`}>
-          <p className={`text-xs text-center font-medium mb-2 ${darkMode ? 'text-gray-400' : 'text-gray-500'}`}>Atalhos de teclado</p>
-          <div className="flex flex-wrap justify-center gap-3 text-xs">
-            <span className={`flex items-center gap-1.5 ${darkMode ? 'text-gray-500' : 'text-gray-400'}`}>
-              <kbd className={`px-2 py-1 rounded ${darkMode ? 'bg-gray-700' : 'bg-gray-100'}`}>←</kbd>
-              <kbd className={`px-2 py-1 rounded ${darkMode ? 'bg-gray-700' : 'bg-gray-100'}`}>→</kbd>
-              Navegar
-            </span>
-            <span className={`flex items-center gap-1.5 ${darkMode ? 'text-gray-500' : 'text-gray-400'}`}>
-              <kbd className={`px-2 py-1 rounded ${darkMode ? 'bg-gray-700' : 'bg-gray-100'}`}>C</kbd>
-              <kbd className={`px-2 py-1 rounded ${darkMode ? 'bg-gray-700' : 'bg-gray-100'}`}>E</kbd>
-              Certo/Errado
-            </span>
-            <span className={`flex items-center gap-1.5 ${darkMode ? 'text-gray-500' : 'text-gray-400'}`}>
-              <kbd className={`px-2 py-1 rounded ${darkMode ? 'bg-gray-700' : 'bg-gray-100'}`}>A</kbd>
-              <kbd className={`px-2 py-1 rounded ${darkMode ? 'bg-gray-700' : 'bg-gray-100'}`}>B</kbd>
-              <kbd className={`px-2 py-1 rounded ${darkMode ? 'bg-gray-700' : 'bg-gray-100'}`}>D</kbd>
-              Alternativas
-            </span>
-          </div>
-        </div>
+        )}
       </main>
 
       {/* Footer */}
-      <footer className={`mt-12 py-6 border-t ${darkMode ? 'border-gray-800 bg-gray-900/50' : 'border-gray-100 bg-white/50'}`}>
-        <div className="max-w-4xl mx-auto px-4 text-center">
+      <footer className={`mt-12 py-6 border-t ${darkMode ? 'border-gray-800' : 'border-gray-200'}`}>
+        <div className="max-w-7xl mx-auto px-4 text-center">
           <p className={`text-sm ${darkMode ? 'text-gray-500' : 'text-gray-400'}`}>
-            Estude PAS - Questões do PAS UnB 1ª Etapa
-          </p>
-          <p className={`text-xs mt-1 ${darkMode ? 'text-gray-600' : 'text-gray-300'}`}>
-            Fonte: CEBRASPE - Provas oficiais
+            Estude PAS - Questões do PAS UnB 1ª Etapa • Fonte: CEBRASPE
           </p>
         </div>
       </footer>
