@@ -15,6 +15,7 @@ const subjectColors = {
   'Artes': { bg: 'bg-rose-500', light: 'bg-rose-100', text: 'text-rose-600', border: 'border-rose-500', gradient: 'from-rose-500 to-rose-600' },
   'Espanhol': { bg: 'bg-yellow-500', light: 'bg-yellow-100', text: 'text-yellow-600', border: 'border-yellow-500', gradient: 'from-yellow-500 to-yellow-600' },
   'Inglês': { bg: 'bg-indigo-500', light: 'bg-indigo-100', text: 'text-indigo-600', border: 'border-indigo-500', gradient: 'from-indigo-500 to-indigo-600' },
+  'Francês': { bg: 'bg-sky-500', light: 'bg-sky-100', text: 'text-sky-600', border: 'border-sky-500', gradient: 'from-sky-500 to-sky-600' },
 }
 
 const getSubjectColor = (subject) => subjectColors[subject] || { bg: 'bg-gray-500', light: 'bg-gray-100', text: 'text-gray-600', border: 'border-gray-500', gradient: 'from-gray-500 to-gray-600' }
@@ -33,6 +34,7 @@ const subjectIcons = {
   'Artes': '🎨',
   'Espanhol': '🇪🇸',
   'Inglês': '🇬🇧',
+  'Francês': '🇫🇷',
 }
 
 function App() {
@@ -41,6 +43,7 @@ function App() {
   const [selectedAnswer, setSelectedAnswer] = useState(null)
   const [showResult, setShowResult] = useState(false)
   const [searchQuery, setSearchQuery] = useState('')
+  const [imageModalOpen, setImageModalOpen] = useState(false)
   const [darkMode, setDarkMode] = useState(() => {
     const saved = localStorage.getItem('pas-dark-mode')
     return saved ? JSON.parse(saved) : false
@@ -96,6 +99,12 @@ function App() {
   // Keyboard shortcuts
   useEffect(() => {
     const handleKeyDown = (e) => {
+      // Close image modal on Escape
+      if (e.key === 'Escape' && imageModalOpen) {
+        setImageModalOpen(false)
+        return
+      }
+      
       if (e.target.tagName === 'INPUT' || e.target.tagName === 'SELECT') return
       if (currentView !== 'questions') return
       
@@ -112,7 +121,7 @@ function App() {
     }
     window.addEventListener('keydown', handleKeyDown)
     return () => window.removeEventListener('keydown', handleKeyDown)
-  }, [question, showResult, currentView])
+  }, [question, showResult, currentView, imageModalOpen])
 
   const handleAnswer = (answer) => {
     if (showResult) return
@@ -542,6 +551,25 @@ function App() {
 
               {/* Content */}
               <div className="p-6">
+                {/* Question Image */}
+                {question.hasImage && question.imageUrl && (
+                  <div className="mb-6">
+                    <div 
+                      onClick={() => setImageModalOpen(true)}
+                      className={`cursor-zoom-in relative rounded-xl overflow-hidden border-2 ${darkMode ? 'border-gray-700 hover:border-emerald-500' : 'border-gray-200 hover:border-emerald-400'} transition-colors`}
+                    >
+                      <img 
+                        src={question.imageUrl} 
+                        alt={`Imagem de referência - Página ${question.pageRef}`}
+                        className="w-full h-auto max-h-96 object-contain bg-white"
+                      />
+                      <div className={`absolute bottom-2 right-2 px-3 py-1.5 rounded-lg text-xs font-medium backdrop-blur-sm ${darkMode ? 'bg-gray-800/80 text-gray-300' : 'bg-white/80 text-gray-600'}`}>
+                        🔍 Clique para ampliar • Página {question.pageRef}
+                      </div>
+                    </div>
+                  </div>
+                )}
+
                 <div className={`text-lg leading-relaxed mb-8 whitespace-pre-line ${darkMode ? 'text-gray-200' : 'text-gray-700'}`}>
                   {question.statement}
                 </div>
@@ -756,6 +784,35 @@ function App() {
           </p>
         </div>
       </footer>
+
+      {/* Image Modal */}
+      {imageModalOpen && question?.imageUrl && (
+        <div 
+          className="fixed inset-0 z-[100] bg-black/90 flex items-center justify-center p-4"
+          onClick={() => setImageModalOpen(false)}
+        >
+          <div className="relative max-w-6xl w-full max-h-[90vh]">
+            <button 
+              onClick={() => setImageModalOpen(false)}
+              className="absolute -top-12 right-0 text-white hover:text-emerald-400 transition-colors flex items-center gap-2"
+            >
+              <span className="text-sm">Fechar</span>
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+            <img 
+              src={question.imageUrl} 
+              alt={`Imagem ampliada - Página ${question.pageRef}`}
+              className="w-full h-auto max-h-[85vh] object-contain rounded-xl bg-white"
+              onClick={(e) => e.stopPropagation()}
+            />
+            <div className="absolute bottom-4 left-1/2 -translate-x-1/2 px-4 py-2 bg-black/50 text-white text-sm rounded-lg backdrop-blur-sm">
+              Página {question.pageRef} da prova • Pressione ESC ou clique fora para fechar
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   )
 }

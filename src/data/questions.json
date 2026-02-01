@@ -1,14 +1,307 @@
 [
   {
+    "id": "2024-esp-01",
+    "year": 2024,
+    "stage": 1,
+    "questionNumber": 1,
+    "type": "C",
+    "subject": "Espanhol",
+    "statement": "Pequeña fuga en sol menor de Bach\n\nEs complicado hablar de formas musicales por lo que tienen de ideales: por mucho que teoricemos sobre las normas de la fuga, la práctica sólo nos presenta excepciones. Para empezar el mismo término, «fuga», cobra distintos significados según la época a la que nos refiramos; puede hacer referencia a un proceso compositivo o a una estructura musical; como tal, existen fugas libres o escolásticas e incluso resulta difícil desentrañar qué patrón rige estas últimas.\n\nDe acuerdo con el texto, juzgue el siguiente ítem:\n\nEs posible inferir la imparcialidad en la autoría del texto.",
+    "alternatives": null,
+    "correctAnswer": "E",
+    "hasImage": false,
+    "imageUrl": null,
+    "pageRef": 1
+  },
+  {
+    "id": "2024-esp-02",
+    "year": 2024,
+    "stage": 1,
+    "questionNumber": 2,
+    "type": "C",
+    "subject": "Espanhol",
+    "statement": "Los pronombres «la» y «le» presentes en el enunciado «las demás la miran, la agasajan, le facilitan el camino», en el segundo párrafo, se refieren al mismo término «una voz».",
+    "alternatives": null,
+    "correctAnswer": "C",
+    "hasImage": false,
+    "imageUrl": null,
+    "pageRef": 1
+  },
+  {
+    "id": "2024-esp-03",
+    "year": 2024,
+    "stage": 1,
+    "questionNumber": 3,
+    "type": "C",
+    "subject": "Espanhol",
+    "statement": "El texto recurre a elementos metafóricos de la naturaleza para comentar la dificultad que presentan las fugas de Bach.",
+    "alternatives": null,
+    "correctAnswer": "C",
+    "hasImage": false,
+    "imageUrl": null,
+    "pageRef": 1
+  },
+  {
+    "id": "2024-esp-04",
+    "year": 2024,
+    "stage": 1,
+    "questionNumber": 4,
+    "type": "C",
+    "subject": "Espanhol",
+    "statement": "La presencia de cierto tipo de elemento que dé coherencia y sentido son importantes para el desorden en las fugas de Bach.",
+    "alternatives": null,
+    "correctAnswer": "C",
+    "hasImage": false,
+    "imageUrl": null,
+    "pageRef": 1
+  },
+  {
+    "id": "2024-esp-05",
+    "year": 2024,
+    "stage": 1,
+    "questionNumber": 5,
+    "type": "C",
+    "subject": "Espanhol",
+    "statement": "Es posible eliminar el adverbio «sí», en el enunciado «que sí tiene que existir un hilo conductor», sin que eso comprometa el significado del texto.",
+    "alternatives": null,
+    "correctAnswer": "C",
+    "hasImage": false,
+    "imageUrl": null,
+    "pageRef": 1
+  },
+  {
+    "id": "2024-esp-06",
+    "year": 2024,
+    "stage": 1,
+    "questionNumber": 6,
+    "type": "C",
+    "subject": "Espanhol",
+    "statement": "¿Qué sabes de estrellas?\n\nLas estrellas son motores de energía cósmica que producen calor, luz, rayos ultravioleta, rayos X y otras formas de radiación. Están compuestas casi en su totalidad de gas y plasma.\n\nA partir del texto, juzgue:\n\nSe denominan estrellas frías a las que presentan unos colores más apagados y menos cálidos.",
+    "alternatives": null,
+    "correctAnswer": "E",
+    "hasImage": false,
+    "imageUrl": null,
+    "pageRef": 1
+  },
+  {
+    "id": "2024-esp-07",
+    "year": 2024,
+    "stage": 1,
+    "questionNumber": 7,
+    "type": "C",
+    "subject": "Espanhol",
+    "statement": "Una cantidad mayor de helio y menor de hidrógeno en una estrella determina que está más cerca de su fin.",
+    "alternatives": null,
+    "correctAnswer": "C",
+    "hasImage": false,
+    "imageUrl": null,
+    "pageRef": 1
+  },
+  {
+    "id": "2024-esp-08",
+    "year": 2024,
+    "stage": 1,
+    "questionNumber": 8,
+    "type": "C",
+    "subject": "Espanhol",
+    "statement": "Se puede inferir que un setenta y cinco por ciento de las estrellas actúan de forma independiente.",
+    "alternatives": null,
+    "correctAnswer": "E",
+    "hasImage": false,
+    "imageUrl": null,
+    "pageRef": 1
+  },
+  {
+    "id": "2024-esp-09",
+    "year": 2024,
+    "stage": 1,
+    "questionNumber": 9,
+    "type": "C",
+    "subject": "Espanhol",
+    "statement": "Es posible substituir «alrededor de» (en el segundo párrafo) por «en la proximidad» manteniendo el mismo sentido en el texto.",
+    "alternatives": null,
+    "correctAnswer": "E",
+    "hasImage": false,
+    "imageUrl": null,
+    "pageRef": 1
+  },
+  {
+    "id": "2024-esp-10",
+    "year": 2024,
+    "stage": 1,
+    "questionNumber": 10,
+    "type": "A",
+    "subject": "Espanhol",
+    "statement": "De acuerdo con la viñeta, es posible inferir que, para alguna gente, las estrellas",
+    "alternatives": [
+      {"letter": "A", "text": "suelen ser personas."},
+      {"letter": "B", "text": "son astros que están en el cielo."},
+      {"letter": "C", "text": "se aprecian mejor durante la noche."},
+      {"letter": "D", "text": "tienen diferentes tamaños y formas."}
+    ],
+    "correctAnswer": "A",
+    "hasImage": true,
+    "imageUrl": "/images/questions/page-02.png",
+    "pageRef": 2
+  },
+  {
+    "id": "2024-fra-01",
+    "year": 2024,
+    "stage": 1,
+    "questionNumber": 1,
+    "type": "C",
+    "subject": "Francês",
+    "statement": "J.S. Bach: Harmonie magistrale de la musique classique et du génie\n\nJohann Sebastian Bach, nom synonyme de génie musical, a laissé une marque indélébile dans le monde de la musique classique. Son parcours musical a commencé dans les églises d'Allemagne.\n\nÀ partir du texte, jugez:\n\nLes thèmes religieux ont été la première source du génie musical de Johann Sebastian Bach.",
+    "alternatives": null,
+    "correctAnswer": "C",
+    "hasImage": false,
+    "imageUrl": null,
+    "pageRef": 2
+  },
+  {
+    "id": "2024-fra-02",
+    "year": 2024,
+    "stage": 1,
+    "questionNumber": 2,
+    "type": "C",
+    "subject": "Francês",
+    "statement": "À cause des tragédies vécues pendant sa vie, Bach a eu du mal à se consacrer à son art musical.",
+    "alternatives": null,
+    "correctAnswer": "E",
+    "hasImage": false,
+    "imageUrl": null,
+    "pageRef": 2
+  },
+  {
+    "id": "2024-fra-03",
+    "year": 2024,
+    "stage": 1,
+    "questionNumber": 3,
+    "type": "C",
+    "subject": "Francês",
+    "statement": "Les compositions de Bach peuvent nous transporter au royaume du langage universel et des émotions.",
+    "alternatives": null,
+    "correctAnswer": "C",
+    "hasImage": false,
+    "imageUrl": null,
+    "pageRef": 2
+  },
+  {
+    "id": "2024-fra-04",
+    "year": 2024,
+    "stage": 1,
+    "questionNumber": 4,
+    "type": "C",
+    "subject": "Francês",
+    "statement": "La production musicale de Bach ne possède aucune relation avec la musique européenne.",
+    "alternatives": null,
+    "correctAnswer": "E",
+    "hasImage": false,
+    "imageUrl": null,
+    "pageRef": 2
+  },
+  {
+    "id": "2024-fra-05",
+    "year": 2024,
+    "stage": 1,
+    "questionNumber": 5,
+    "type": "C",
+    "subject": "Francês",
+    "statement": "Clavier bien tempéré et Messe en si mineur sont des compositions de Bach qui réunissent la technique et l'émotion.",
+    "alternatives": null,
+    "correctAnswer": "C",
+    "hasImage": false,
+    "imageUrl": null,
+    "pageRef": 2
+  },
+  {
+    "id": "2024-fra-06",
+    "year": 2024,
+    "stage": 1,
+    "questionNumber": 6,
+    "type": "C",
+    "subject": "Francês",
+    "statement": "Rouges, bleues, blanches… Les étoiles dans le ciel n'ont pas toute la même teinte.\n\nL'étoile appelée Bételgeuse se trouve dans la constellation du taureau.",
+    "alternatives": null,
+    "correctAnswer": "E",
+    "hasImage": false,
+    "imageUrl": null,
+    "pageRef": 2
+  },
+  {
+    "id": "2024-fra-07",
+    "year": 2024,
+    "stage": 1,
+    "questionNumber": 7,
+    "type": "C",
+    "subject": "Francês",
+    "statement": "Ejnar Hertzsprung et Henry Norris Russell montrent que les étoiles les plus chaudes sont rouges.",
+    "alternatives": null,
+    "correctAnswer": "E",
+    "hasImage": false,
+    "imageUrl": null,
+    "pageRef": 2
+  },
+  {
+    "id": "2024-fra-08",
+    "year": 2024,
+    "stage": 1,
+    "questionNumber": 8,
+    "type": "C",
+    "subject": "Francês",
+    "statement": "La couleur d'une étoile est liée à sa température.",
+    "alternatives": null,
+    "correctAnswer": "C",
+    "hasImage": false,
+    "imageUrl": null,
+    "pageRef": 2
+  },
+  {
+    "id": "2024-fra-09",
+    "year": 2024,
+    "stage": 1,
+    "questionNumber": 9,
+    "type": "C",
+    "subject": "Francês",
+    "statement": "On peut obtenir des informations sur la masse, la composition, l'âge ou la vitesse d'une étoile par son analyse spectrale.",
+    "alternatives": null,
+    "correctAnswer": "C",
+    "hasImage": false,
+    "imageUrl": null,
+    "pageRef": 2
+  },
+  {
+    "id": "2024-fra-10",
+    "year": 2024,
+    "stage": 1,
+    "questionNumber": 10,
+    "type": "A",
+    "subject": "Francês",
+    "statement": "L'effet Zeeman indique",
+    "alternatives": [
+      {"letter": "A", "text": "le champ magnétique."},
+      {"letter": "B", "text": "la hauteur des raies de l'étoile."},
+      {"letter": "C", "text": "l'effet Doppler."},
+      {"letter": "D", "text": "la couleur de l'étoile."}
+    ],
+    "correctAnswer": "A",
+    "hasImage": false,
+    "imageUrl": null,
+    "pageRef": 2
+  },
+  {
     "id": "2024-ing-01",
     "year": 2024,
     "stage": 1,
     "questionNumber": 1,
     "type": "C",
     "subject": "Inglês",
-    "statement": "Human understanding of what the universe is, how it works and how vast it is has changed over the ages. For countless lifetimes, humans had little or no means of understanding the universe. Our distant ancestors instead relied upon myth to explain the origins of everything. Because our ancestors themselves invented them, the myths reflect human concerns, hopes, aspirations or fears rather than the nature of reality.\n\nSeveral centuries ago, however, humans began to apply mathematics, writing and new investigative principles to the search for knowledge. Those principles were refined over time, as were scientific tools, eventually revealing hints about the nature of the universe.\n\nAccording to the text, judge the following item:\n\nThe word \"however\", in the first sentence of the second paragraph, introduces information which contrasts with the mythical explanation of the universe presented in the first paragraph.",
+    "statement": "Human understanding of what the universe is, how it works and how vast it is has changed over the ages. For countless lifetimes, humans had little or no means of understanding the universe. Our distant ancestors instead relied upon myth to explain the origins of everything.\n\nAccording to the text, judge:\n\nThe word \"however\", in the first sentence of the second paragraph, introduces information which contrasts with the mythical explanation of the universe presented in the first paragraph.",
     "alternatives": null,
-    "correctAnswer": "C"
+    "correctAnswer": "C",
+    "hasImage": false,
+    "imageUrl": null,
+    "pageRef": 3
   },
   {
     "id": "2024-ing-02",
@@ -19,7 +312,10 @@
     "subject": "Inglês",
     "statement": "With the text, the author wants to inform how human knowledge about the universe has developed through the centuries, and how much it has progressed in recent decades.",
     "alternatives": null,
-    "correctAnswer": "C"
+    "correctAnswer": "C",
+    "hasImage": false,
+    "imageUrl": null,
+    "pageRef": 3
   },
   {
     "id": "2024-ing-03",
@@ -30,7 +326,10 @@
     "subject": "Inglês",
     "statement": "By using the term \"permanently crewed\" (first sentence of the last paragraph), the author informs that there are always people aboard the space station.",
     "alternatives": null,
-    "correctAnswer": "C"
+    "correctAnswer": "C",
+    "hasImage": false,
+    "imageUrl": null,
+    "pageRef": 3
   },
   {
     "id": "2024-ing-04",
@@ -41,7 +340,10 @@
     "subject": "Inglês",
     "statement": "There is an opposition between \"countless lifetimes\" (second sentence of the first paragraph) and \"In the span of a single lifetime\" (first sentence of the third paragraph), which helps to indicate how fast science applied to the universe has developed lately.",
     "alternatives": null,
-    "correctAnswer": "C"
+    "correctAnswer": "C",
+    "hasImage": false,
+    "imageUrl": null,
+    "pageRef": 3
   },
   {
     "id": "2024-ing-05",
@@ -52,7 +354,10 @@
     "subject": "Inglês",
     "statement": "According to the text, science didn't exist a few centuries ago, thus there was no word for scientist.",
     "alternatives": null,
-    "correctAnswer": "E"
+    "correctAnswer": "E",
+    "hasImage": false,
+    "imageUrl": null,
+    "pageRef": 3
   },
   {
     "id": "2024-ing-06",
@@ -61,9 +366,12 @@
     "questionNumber": 6,
     "type": "C",
     "subject": "Inglês",
-    "statement": "Based on the infographic about Bach:\n\nThe author of the infographic shows evidence, in his text, of how Hans von Bülow gave The Well-Tempered Clavier collection the nickname \"the old testament of music\".",
+    "statement": "Based on the infographic about Johann Sebastian Bach:\n\nThe author of the infographic shows evidence, in his text, of how Hans von Bülow gave The Well-Tempered Clavier collection the nickname \"the old testament of music\".",
     "alternatives": null,
-    "correctAnswer": "E"
+    "correctAnswer": "E",
+    "hasImage": true,
+    "imageUrl": "/images/questions/page-03.png",
+    "pageRef": 3
   },
   {
     "id": "2024-ing-07",
@@ -74,7 +382,10 @@
     "subject": "Inglês",
     "statement": "To make sense of the text inserted in the \"DID YOU KNOW?\" column, the reader has to be able to identify to whom the verbs of the sentences refer.",
     "alternatives": null,
-    "correctAnswer": "C"
+    "correctAnswer": "C",
+    "hasImage": true,
+    "imageUrl": "/images/questions/page-03.png",
+    "pageRef": 3
   },
   {
     "id": "2024-ing-08",
@@ -85,7 +396,10 @@
     "subject": "Inglês",
     "statement": "According to the text, Bach knew about music composed in other regions of Europe because he used to travel to meet other composers.",
     "alternatives": null,
-    "correctAnswer": "E"
+    "correctAnswer": "E",
+    "hasImage": true,
+    "imageUrl": "/images/questions/page-03.png",
+    "pageRef": 3
   },
   {
     "id": "2024-ing-09",
@@ -96,7 +410,10 @@
     "subject": "Inglês",
     "statement": "In the text of the \"FAMOUS FOR\" column, the author uses words connected with the world of classical music to impress the readers and convince them to listen to Bach.",
     "alternatives": null,
-    "correctAnswer": "E"
+    "correctAnswer": "E",
+    "hasImage": true,
+    "imageUrl": "/images/questions/page-03.png",
+    "pageRef": 3
   },
   {
     "id": "2024-ing-10",
@@ -112,7 +429,10 @@
       {"letter": "C", "text": "Counterpoint."},
       {"letter": "D", "text": "Sponge."}
     ],
-    "correctAnswer": "A"
+    "correctAnswer": "A",
+    "hasImage": true,
+    "imageUrl": "/images/questions/page-03.png",
+    "pageRef": 3
   },
   {
     "id": "2024-011",
@@ -123,7 +443,10 @@
     "subject": "Português",
     "statement": "Discurso de Txai Suruí na COP 26:\n\n\"Meu nome é Txai Suruí, eu tenho só 24, mas meu povo vive há pelo menos 6 mil anos na floresta amazônica. Meu pai, o grande cacique Almir Suruí, me ensinou que devemos ouvir as estrelas, a Lua, o vento, os animais e as árvores.\"\n\nNo primeiro parágrafo, o isolamento do trecho \"o grande cacique Almir Suruí\" entre vírgulas tem a finalidade de marcar uma inversão de termos no período.",
     "alternatives": null,
-    "correctAnswer": "E"
+    "correctAnswer": "E",
+    "hasImage": false,
+    "imageUrl": null,
+    "pageRef": 4
   },
   {
     "id": "2024-012",
@@ -134,7 +457,10 @@
     "subject": "Português",
     "statement": "Os avanços tecnológicos e informacionais correspondem ao que a jovem indígena chamou em seu discurso de \"utopia\", pois impedem promessas mentirosas e irresponsáveis, combatendo palavras vazias, por meio da verificação dos discursos e da massificação do engajamento de todos os povos na construção sustentável do futuro sobre a Terra.",
     "alternatives": null,
-    "correctAnswer": "E"
+    "correctAnswer": "E",
+    "hasImage": false,
+    "imageUrl": null,
+    "pageRef": 4
   },
   {
     "id": "2024-013",
@@ -145,7 +471,10 @@
     "subject": "Português",
     "statement": "\"Hoje o clima está esquentando, os animais estão desaparecendo, os rios estão morrendo, nossas plantações não florescem como antes.\"\n\nNo primeiro período do segundo parágrafo, a sequência de locuções verbais com verbo no gerúndio — \"está esquentando\", \"estão desaparecendo\", \"estão morrendo\" — sinaliza a continuidade dos acontecimentos mencionados, que denotam prejuízos para o planeta.",
     "alternatives": null,
-    "correctAnswer": "C"
+    "correctAnswer": "C",
+    "hasImage": false,
+    "imageUrl": null,
+    "pageRef": 4
   },
   {
     "id": "2024-014",
@@ -156,7 +485,10 @@
     "subject": "Português",
     "statement": "Em seu discurso, a jovem indígena relaciona as crises climáticas e ambientais aos caminhos tomados por uma parte da humanidade sobre a Terra, entretanto demonstra que acredita na possibilidade de mudanças, com as vozes indígenas sendo ouvidas e suas orientações filosóficas e culturais sendo adotadas para contribuir na transformação da realidade.",
     "alternatives": null,
-    "correctAnswer": "C"
+    "correctAnswer": "C",
+    "hasImage": false,
+    "imageUrl": null,
+    "pageRef": 4
   },
   {
     "id": "2024-015",
@@ -167,7 +499,10 @@
     "subject": "Português",
     "statement": "No sexto parágrafo, a opção pelo emprego da primeira pessoa do plural — \"devemos\" (...) \"Nós temos\" — após o emprego da terceira pessoa do plural — \"estão\" — é um recurso linguístico por meio do qual Txai Suruí convida os ouvintes/leitores de seu discurso a se unirem aos povos indígenas para, juntos, adiarem o fim do mundo.",
     "alternatives": null,
-    "correctAnswer": "E"
+    "correctAnswer": "E",
+    "hasImage": false,
+    "imageUrl": null,
+    "pageRef": 4
   },
   {
     "id": "2024-016",
@@ -178,7 +513,10 @@
     "subject": "História",
     "statement": "Na América portuguesa, a escravização de indígenas era uma tarefa simples e foi bem-sucedida na maior parte das vezes, porque eles aceitaram passivamente a dominação pelos colonizadores.",
     "alternatives": null,
-    "correctAnswer": "E"
+    "correctAnswer": "E",
+    "hasImage": false,
+    "imageUrl": null,
+    "pageRef": 4
   },
   {
     "id": "2024-017",
@@ -194,7 +532,10 @@
       {"letter": "C", "text": "resultou em um completo desinteresse dos colonizadores pelos povos indígenas."},
       {"letter": "D", "text": "é uma das evidências do respeito à cultura dos povos indígenas."}
     ],
-    "correctAnswer": "B"
+    "correctAnswer": "B",
+    "hasImage": false,
+    "imageUrl": null,
+    "pageRef": 4
   },
   {
     "id": "2024-018",
@@ -203,14 +544,17 @@
     "questionNumber": 18,
     "type": "A",
     "subject": "Português",
-    "statement": "O sétimo parágrafo do texto de Txai Suruí se constrói com frases",
+    "statement": "\"Vamos frear as emissões de promessas mentirosas e irresponsáveis; vamos acabar com a poluição das palavras vazias, e vamos lutar por um futuro e um presente habitáveis.\"\n\nO sétimo parágrafo do texto de Txai Suruí se constrói com frases",
     "alternatives": [
       {"letter": "A", "text": "argumentativas."},
       {"letter": "B", "text": "expositivas."},
       {"letter": "C", "text": "injuntivas."},
       {"letter": "D", "text": "narrativas."}
     ],
-    "correctAnswer": "C"
+    "correctAnswer": "C",
+    "hasImage": false,
+    "imageUrl": null,
+    "pageRef": 4
   },
   {
     "id": "2024-020",
@@ -221,7 +565,10 @@
     "subject": "Química",
     "statement": "No meio aquático, o mercúrio acumula-se na forma de metilmercúrio, CH₃Hg⁺. A degradação do metilmercúrio, denominada demetilação, é um processo que reduz a biodisponibilidade do mercúrio para os organismos aquáticos, conforme a reação:\n\n4CH₃Hg⁺ + 2H₂O + 4H⁺ ⇌ 3CH₄ + CO₂ + 4Hg²⁺ + 4H₂\n\nConforme a reação apresentada, no processo de demetilação, é observada a conservação da matéria, pois a soma das massas dos reagentes é igual à soma das massas dos produtos.",
     "alternatives": null,
-    "correctAnswer": "C"
+    "correctAnswer": "C",
+    "hasImage": false,
+    "imageUrl": null,
+    "pageRef": 5
   },
   {
     "id": "2024-021",
@@ -237,7 +584,10 @@
       {"letter": "C", "text": "11,04"},
       {"letter": "D", "text": "1,104×10⁴"}
     ],
-    "correctAnswer": "A"
+    "correctAnswer": "A",
+    "hasImage": false,
+    "imageUrl": null,
+    "pageRef": 5
   },
   {
     "id": "2024-022",
@@ -246,9 +596,12 @@
     "questionNumber": 22,
     "type": "C",
     "subject": "História",
-    "statement": "O Brasil foi o principal destino de africanos escravizados nas Américas, sobretudo a partir do século XVII; assim, a forte presença africana na América portuguesa deu forma ao escravismo, instituição central no processo de formação da sociedade brasileira.",
+    "statement": "Texto de Chimamanda Adichie sobre \"O perigo de uma história única\" e texto sobre o povoado de São José em Cavalcante, território Kalunga.\n\nO Brasil foi o principal destino de africanos escravizados nas Américas, sobretudo a partir do século XVII; assim, a forte presença africana na América portuguesa deu forma ao escravismo, instituição central no processo de formação da sociedade brasileira.",
     "alternatives": null,
-    "correctAnswer": "C"
+    "correctAnswer": "C",
+    "hasImage": false,
+    "imageUrl": null,
+    "pageRef": 5
   },
   {
     "id": "2024-023",
@@ -259,7 +612,10 @@
     "subject": "História",
     "statement": "A chamada diáspora africana deu início ao processo de civilização, aculturamento e organização social e política dos povos que habitavam o continente africano no século XV.",
     "alternatives": null,
-    "correctAnswer": "E"
+    "correctAnswer": "E",
+    "hasImage": false,
+    "imageUrl": null,
+    "pageRef": 5
   },
   {
     "id": "2024-024",
@@ -270,7 +626,10 @@
     "subject": "História",
     "statement": "O comércio atlântico de africanos escravizados alterou fortemente a organização política, social e econômica de diversos reinos e grupos sociais do continente africano.",
     "alternatives": null,
-    "correctAnswer": "C"
+    "correctAnswer": "C",
+    "hasImage": false,
+    "imageUrl": null,
+    "pageRef": 5
   },
   {
     "id": "2024-025",
@@ -281,7 +640,10 @@
     "subject": "Português",
     "statement": "No texto \"O cerrado está morrendo\", é estabelecida uma relação de oposição entre a maneira como são certificados os moradores do povoado de São José e como eles se identificam.",
     "alternatives": null,
-    "correctAnswer": "C"
+    "correctAnswer": "C",
+    "hasImage": false,
+    "imageUrl": null,
+    "pageRef": 5
   },
   {
     "id": "2024-026",
@@ -292,7 +654,10 @@
     "subject": "História",
     "statement": "O Quilombo dos Palmares, o mais conhecido movimento insurgente de escravizados da história do Brasil, existiu por cerca de 100 anos, constituindo um espaço africano no interior do domínio colonial português da América.",
     "alternatives": null,
-    "correctAnswer": "C"
+    "correctAnswer": "C",
+    "hasImage": false,
+    "imageUrl": null,
+    "pageRef": 5
   },
   {
     "id": "2024-027",
@@ -303,7 +668,10 @@
     "subject": "História",
     "statement": "A ocupação do território Kalunga, como no povoado de São José, evidencia um processo contínuo de construção identitária em que os moradores reconhecem sua origem quilombola, mesmo sem certificação oficial.",
     "alternatives": null,
-    "correctAnswer": "C"
+    "correctAnswer": "C",
+    "hasImage": false,
+    "imageUrl": null,
+    "pageRef": 5
   },
   {
     "id": "2024-028",
@@ -315,11 +683,14 @@
     "statement": "É relativamente recente a inclusão da história da África nos currículos das universidades brasileiras e das escolas de ensino médio e fundamental. A respeito do ensino de história da África nas escolas, assinale a opção correta.",
     "alternatives": [
       {"letter": "A", "text": "Além de inserir um amplo conjunto de novos saberes a respeito de um continente de história riquíssima, estudar história da África é fundamental para a compreensão da história do Brasil."},
-      {"letter": "B", "text": "Estudar história do continente africano é empreitada de pouca serventia, dado se tratar de continente historicamente irrelevante para o desenvolvimento global."},
+      {"letter": "B", "text": "Estudar história do continente africano é empreitada de pouca serventia."},
       {"letter": "C", "text": "O ensino obrigatório da história da África tem contribuído com o enfrentamento do racismo no Brasil."},
-      {"letter": "D", "text": "O ensino de história da África das escolas de ensino médio e fundamental tem impactado a produção do conhecimento da História."}
+      {"letter": "D", "text": "O ensino de história da África tem impactado a produção do conhecimento da História."}
     ],
-    "correctAnswer": "A"
+    "correctAnswer": "A",
+    "hasImage": false,
+    "imageUrl": null,
+    "pageRef": 5
   },
   {
     "id": "2024-029",
@@ -328,9 +699,12 @@
     "questionNumber": 29,
     "type": "C",
     "subject": "Artes",
-    "statement": "Interpretada pela icônica Clementina de Jesus, a música Canto II é uma expressão profunda da cultura afro-brasileira e da resistência negra.\n\nReforçando-se a influência da cultura africana, na gravação de Canto II foram utilizados somente instrumentos de percussão de origem africana para acompanhar a melodia, não havendo qualquer instrumento melódico ou harmônico.",
+    "statement": "Interpretada pela icônica Clementina de Jesus, a música Canto II é uma expressão profunda da cultura afro-brasileira e da resistência negra. A partitura de um trecho dessa música é apresentada.\n\nReforçando-se a influência da cultura africana, na gravação de Canto II foram utilizados somente instrumentos de percussão de origem africana para acompanhar a melodia, não havendo qualquer instrumento melódico ou harmônico.",
     "alternatives": null,
-    "correctAnswer": "C"
+    "correctAnswer": "C",
+    "hasImage": true,
+    "imageUrl": "/images/questions/page-06.png",
+    "pageRef": 6
   },
   {
     "id": "2024-030",
@@ -339,9 +713,12 @@
     "questionNumber": 30,
     "type": "C",
     "subject": "Português",
-    "statement": "Sobre o Centro UnB Cerrado em Alto Paraíso de Goiás:\n\nO termo \"estrategicamente\" (primeiro período) reflete a opinião da autora do texto, e a motivação para o emprego desse termo encontra-se expressa no segundo período.",
+    "statement": "Sobre o Centro UnB Cerrado em Alto Paraíso de Goiás, criado para promover a conservação ambiental e o desenvolvimento sustentável:\n\nO termo \"estrategicamente\" (primeiro período) reflete a opinião da autora do texto, e a motivação para o emprego desse termo encontra-se expressa no segundo período.",
     "alternatives": null,
-    "correctAnswer": "C"
+    "correctAnswer": "C",
+    "hasImage": false,
+    "imageUrl": null,
+    "pageRef": 6
   },
   {
     "id": "2024-031",
@@ -352,7 +729,10 @@
     "subject": "Biologia",
     "statement": "A diversidade de hábitats dentro do cerrado contribui para a presença de uma ampla gama de espécies vegetais, especialmente árvores cujas copas formam uma cobertura contínua e fechada, característica típica da formação savânica encontrada no cerrado, mas que vem sofrendo alterações com o desmatamento crescente.",
     "alternatives": null,
-    "correctAnswer": "E"
+    "correctAnswer": "E",
+    "hasImage": false,
+    "imageUrl": null,
+    "pageRef": 6
   },
   {
     "id": "2024-032",
@@ -363,7 +743,10 @@
     "subject": "Biologia",
     "statement": "A maioria das espécies vegetais e animais do bioma cerrado pode ser encontrada também em outros biomas, como a Amazônia, pois o desmatamento do Cerrado possibilitou que grande número de espécies, principalmente as arbóreas, se dispersassem pelos diferentes biomas.",
     "alternatives": null,
-    "correctAnswer": "E"
+    "correctAnswer": "E",
+    "hasImage": false,
+    "imageUrl": null,
+    "pageRef": 6
   },
   {
     "id": "2024-033",
@@ -374,7 +757,10 @@
     "subject": "Geografia",
     "statement": "A topografia acidentada da Chapada dos Veadeiros constitui uma barreira natural que dificulta a agricultura extensiva e limita a ocupação humana em larga escala, o que favorece a preservação ambiental.",
     "alternatives": null,
-    "correctAnswer": "C"
+    "correctAnswer": "C",
+    "hasImage": false,
+    "imageUrl": null,
+    "pageRef": 6
   },
   {
     "id": "2024-034",
@@ -385,7 +771,10 @@
     "subject": "Geografia",
     "statement": "Devido ao baixo nível de desenvolvimento econômico da região da Chapada dos Veadeiros, sua exploração econômica pouco afeta o meio ambiente.",
     "alternatives": null,
-    "correctAnswer": "E"
+    "correctAnswer": "E",
+    "hasImage": false,
+    "imageUrl": null,
+    "pageRef": 6
   },
   {
     "id": "2024-035",
@@ -396,7 +785,10 @@
     "subject": "Geografia",
     "statement": "As chapadas são um tipo de relevo que acumula grande quantidade de sedimentos erodidos provenientes de áreas de maior altitude e transportados, geralmente, pelas águas dos rios.",
     "alternatives": null,
-    "correctAnswer": "E"
+    "correctAnswer": "E",
+    "hasImage": false,
+    "imageUrl": null,
+    "pageRef": 6
   },
   {
     "id": "2024-036",
@@ -407,7 +799,10 @@
     "subject": "Biologia",
     "statement": "O cerrado quase desapareceu durante o século XX principalmente devido à atividade madeireira, pois a madeira das árvores desse bioma é muito utilizada na fabricação de móveis, por ter alta durabilidade.",
     "alternatives": null,
-    "correctAnswer": "E"
+    "correctAnswer": "E",
+    "hasImage": false,
+    "imageUrl": null,
+    "pageRef": 6
   },
   {
     "id": "2024-037",
@@ -416,14 +811,17 @@
     "questionNumber": 37,
     "type": "A",
     "subject": "Biologia",
-    "statement": "A espécie Spodoptera albula é um inseto controlado pelas toxinas Cry e Vip do Bacillus thuringiensis (Bt).\n\nA interação ecológica envolvida no controle da espécie S. albula, conforme os efeitos provocados pelas referidas toxinas, é denominada",
+    "statement": "A espécie Spodoptera albula é um inseto controlado pelas toxinas Cry e Vip do Bacillus thuringiensis (Bt). O gráfico mostra a mortalidade de S. albula sob o efeito de produtos à base de Bt.\n\nA interação ecológica envolvida no controle da espécie S. albula, conforme os efeitos provocados pelas referidas toxinas, é denominada",
     "alternatives": [
       {"letter": "A", "text": "parasitismo."},
       {"letter": "B", "text": "predatismo."},
       {"letter": "C", "text": "mutualismo."},
       {"letter": "D", "text": "amensalismo."}
     ],
-    "correctAnswer": "D"
+    "correctAnswer": "D",
+    "hasImage": true,
+    "imageUrl": "/images/questions/page-06.png",
+    "pageRef": 6
   },
   {
     "id": "2024-038",
@@ -432,9 +830,12 @@
     "questionNumber": 38,
     "type": "C",
     "subject": "Português",
-    "statement": "\"No bioma cerrado, as plantas são submetidas a um regime climático que despeja em média 1.200 mm a 1.500 mm de chuvas anuais.\"\n\nNo primeiro período do texto, o segmento \"a um regime climático\" desempenha a função sintática de agente da passiva.",
+    "statement": "\"No bioma cerrado, as plantas são submetidas a um regime climático que despeja em média 1.200 mm a 1.500 mm de chuvas anuais, concentradas em apenas seis meses do ano.\"\n\nNo primeiro período do texto, o segmento \"a um regime climático\" desempenha a função sintática de agente da passiva.",
     "alternatives": null,
-    "correctAnswer": "E"
+    "correctAnswer": "E",
+    "hasImage": false,
+    "imageUrl": null,
+    "pageRef": 7
   },
   {
     "id": "2024-039",
@@ -445,7 +846,10 @@
     "subject": "Geografia",
     "statement": "Considerando os climogramas de Manaus (AM) e Formosa (GO):\n\nA distribuição de chuvas em Manaus é característica de clima equatorial.",
     "alternatives": null,
-    "correctAnswer": "C"
+    "correctAnswer": "C",
+    "hasImage": true,
+    "imageUrl": "/images/questions/page-07.png",
+    "pageRef": 7
   },
   {
     "id": "2024-040",
@@ -456,7 +860,10 @@
     "subject": "Geografia",
     "statement": "A expressiva sazonalidade mostrada no climograma referente a Formosa, com ritmo anual de chuvas bem definido, é evidência da tropicalidade do clima na região.",
     "alternatives": null,
-    "correctAnswer": "C"
+    "correctAnswer": "C",
+    "hasImage": true,
+    "imageUrl": "/images/questions/page-07.png",
+    "pageRef": 7
   },
   {
     "id": "2024-041",
@@ -465,14 +872,17 @@
     "questionNumber": 41,
     "type": "A",
     "subject": "Química",
-    "statement": "A respeito do papel dos diferentes gases envolvidos no efeito estufa, assinale a opção correta.",
+    "statement": "A respeito do papel dos diferentes gases envolvidos no efeito estufa, ilustrado na figura, assinale a opção correta.",
     "alternatives": [
       {"letter": "A", "text": "O dióxido de carbono (CO₂) é um gás de efeito estufa proveniente, principalmente, do uso de fertilizantes nitrogenados."},
       {"letter": "B", "text": "Os gases fluorados, como o CFC, são extremamente eficazes na retenção de calor e, embora permaneçam na atmosfera por muito pouco tempo, o calor por eles retido pode ser convertido em energia elétrica."},
       {"letter": "C", "text": "O metano (CH₄) é um gás muito eficiente em reter calor na atmosfera, sendo a pecuária uma das principais atividades emissoras desse gás."},
       {"letter": "D", "text": "O óxido nitroso (N₂O) é liberado durante a fabricação de aerossóis e sua capacidade de reter calor permite seu emprego em baterias."}
     ],
-    "correctAnswer": "C"
+    "correctAnswer": "C",
+    "hasImage": true,
+    "imageUrl": "/images/questions/page-07.png",
+    "pageRef": 7
   },
   {
     "id": "2024-042",
@@ -483,7 +893,10 @@
     "subject": "História",
     "statement": "A Revolução Industrial alterou tanto o modo de produção artesanal na Inglaterra a partir do final do século XVIII, quando maquinário movido a combustíveis fósseis passaram a ser utilizados no processo produtivo, como impactou negativamente as relações de trabalho, razão pela qual os trabalhadores criaram novas formas de associação e de resistência.",
     "alternatives": null,
-    "correctAnswer": "C"
+    "correctAnswer": "C",
+    "hasImage": false,
+    "imageUrl": null,
+    "pageRef": 7
   },
   {
     "id": "2024-043",
@@ -492,9 +905,12 @@
     "questionNumber": 43,
     "type": "C",
     "subject": "Artes",
-    "statement": "A arte medieval foi produzida entre os séculos X e XV, influenciada pela Igreja Católica.\n\nApesar de a arte medieval estar principalmente fundamentada na arte sacra, a música \"Robin m'aime\", de Adam de la Halle, é de caráter secular.",
+    "statement": "Considerando o texto e a imagem da Catedral de Notre Dame de Reims (século XIII):\n\nApesar de a arte medieval estar principalmente fundamentada na arte sacra, a música \"Robin m'aime\", de Adam de la Halle, é de caráter secular.",
     "alternatives": null,
-    "correctAnswer": "C"
+    "correctAnswer": "C",
+    "hasImage": true,
+    "imageUrl": "/images/questions/page-08.png",
+    "pageRef": 8
   },
   {
     "id": "2024-044",
@@ -505,7 +921,10 @@
     "subject": "Artes",
     "statement": "A estrutura arquitetônica das catedrais góticas, seus vitrais e sua decoração escultórica, ao ilustrarem passagens bíblicas, cumpriam uma função de educação religiosa, na medida em que possibilitavam a instrução dos fiéis, em sua maioria, analfabetos, por meio de elementos visuais.",
     "alternatives": null,
-    "correctAnswer": "C"
+    "correctAnswer": "C",
+    "hasImage": true,
+    "imageUrl": "/images/questions/page-08.png",
+    "pageRef": 8
   },
   {
     "id": "2024-045",
@@ -516,7 +935,10 @@
     "subject": "História",
     "statement": "Na França e na Inglaterra, desde a era medieval até parte da era moderna, havia a crença de que os reis tinham poder de cura por meio do toque, porém essa crença não era uma das fontes legitimadoras dos poderes reais.",
     "alternatives": null,
-    "correctAnswer": "E"
+    "correctAnswer": "E",
+    "hasImage": false,
+    "imageUrl": null,
+    "pageRef": 8
   },
   {
     "id": "2024-046",
@@ -527,7 +949,10 @@
     "subject": "Artes",
     "statement": "Os vitrais circulares sobre o portal da fachada principal ou no transepto das igrejas góticas da Idade Média denominam-se flor circular, que, na Catedral de Notre Dame de Reims, se encontra sob um arco quebrado.",
     "alternatives": null,
-    "correctAnswer": "E"
+    "correctAnswer": "E",
+    "hasImage": true,
+    "imageUrl": "/images/questions/page-08.png",
+    "pageRef": 8
   },
   {
     "id": "2024-047",
@@ -536,9 +961,12 @@
     "questionNumber": 47,
     "type": "C",
     "subject": "Matemática",
-    "statement": "Considerando a razão áurea φ (phi), que é a raiz positiva da função f(x) = x² - x - 1:\n\nO número φ satisfaz a equação 1/φ + 1 = φ e dessa equação conclui-se que a + b = c (onde a, b e c são os comprimentos das linhas na imagem da catedral).",
+    "statement": "Na imagem das torres da Catedral de Notre Dame de Reims, foram incluídas três linhas paralelas entre si e perpendiculares às torres. Os comprimentos a, b e c têm proporções a/b = b/c = φ (razão áurea).\n\nO número φ satisfaz a equação 1/φ + 1 = φ e dessa equação conclui-se que a + b = c.",
     "alternatives": null,
-    "correctAnswer": "C"
+    "correctAnswer": "C",
+    "hasImage": true,
+    "imageUrl": "/images/questions/page-08.png",
+    "pageRef": 8
   },
   {
     "id": "2024-048",
@@ -549,7 +977,10 @@
     "subject": "Matemática",
     "statement": "Na imagem da Catedral de Notre Dame de Reims, as torres da catedral são paralelas.",
     "alternatives": null,
-    "correctAnswer": "C"
+    "correctAnswer": "C",
+    "hasImage": true,
+    "imageUrl": "/images/questions/page-08.png",
+    "pageRef": 8
   },
   {
     "id": "2024-049",
@@ -560,7 +991,10 @@
     "subject": "Matemática",
     "statement": "Considerando √5 = 2,236 e que φ é a razão áurea (raiz positiva de x² - x - 1 = 0):\n\nO número φ é inferior a 1,5.",
     "alternatives": null,
-    "correctAnswer": "E"
+    "correctAnswer": "E",
+    "hasImage": false,
+    "imageUrl": null,
+    "pageRef": 8
   },
   {
     "id": "2024-050",
@@ -576,7 +1010,10 @@
       {"letter": "C", "text": "geométrica de razão menor que um."},
       {"letter": "D", "text": "geométrica de razão maior que um."}
     ],
-    "correctAnswer": "C"
+    "correctAnswer": "C",
+    "hasImage": false,
+    "imageUrl": null,
+    "pageRef": 8
   },
   {
     "id": "2024-051",
@@ -585,9 +1022,12 @@
     "questionNumber": 51,
     "type": "C",
     "subject": "Artes",
-    "statement": "Com base no trecho da partitura de Pequena fuga em sol menor, de Bach:\n\nAs figuras musicais que aparecem no trecho apresentado são: mínima, semínima, pausa de semínima, colcheia, pausa de colcheia e semicolcheia.",
+    "statement": "Com base no trecho da partitura de Pequena fuga em sol menor, de Johann Sebastian Bach:\n\nAs figuras musicais que aparecem no trecho apresentado são: mínima, semínima, pausa de semínima, colcheia, pausa de colcheia e semicolcheia.",
     "alternatives": null,
-    "correctAnswer": "E"
+    "correctAnswer": "E",
+    "hasImage": true,
+    "imageUrl": "/images/questions/page-09.png",
+    "pageRef": 9
   },
   {
     "id": "2024-052",
@@ -598,7 +1038,10 @@
     "subject": "Artes",
     "statement": "No trecho apresentado da partitura de Bach, há três pentagramas e quatro vozes distintas.",
     "alternatives": null,
-    "correctAnswer": "C"
+    "correctAnswer": "C",
+    "hasImage": true,
+    "imageUrl": "/images/questions/page-09.png",
+    "pageRef": 9
   },
   {
     "id": "2024-053",
@@ -607,9 +1050,12 @@
     "questionNumber": 53,
     "type": "C",
     "subject": "Português",
-    "statement": "No fragmento da peça A Pena e a Lei, de Ariano Suassuna, o emprego dos adjetivos \"sabido\" e \"besta\" na terceira fala de Cheiroso remete a um registro coloquial da língua portuguesa.",
+    "statement": "Fragmentos de Antígona (Sófocles) e A Pena e a Lei (Ariano Suassuna).\n\nNo fragmento da peça A Pena e a Lei, o emprego dos adjetivos \"sabido\" e \"besta\" na terceira fala de Cheiroso remete a um registro coloquial da língua portuguesa.",
     "alternatives": null,
-    "correctAnswer": "C"
+    "correctAnswer": "C",
+    "hasImage": false,
+    "imageUrl": null,
+    "pageRef": 9
   },
   {
     "id": "2024-054",
@@ -620,7 +1066,10 @@
     "subject": "Literatura",
     "statement": "Embora os trechos apresentados integrem peças teatrais, caracterizadas como textos escritos para ser encenados, apenas Antígona é obra do gênero literário dramático.",
     "alternatives": null,
-    "correctAnswer": "E"
+    "correctAnswer": "E",
+    "hasImage": false,
+    "imageUrl": null,
+    "pageRef": 9
   },
   {
     "id": "2024-055",
@@ -631,7 +1080,10 @@
     "subject": "Filosofia",
     "statement": "As tragédias gregas, por serem entretenimentos populares focados somente no sofrimento, foram irrelevantes para o desenvolvimento da filosofia e pouco contribuíram na constituição da cultura e do pensamento ocidental.",
     "alternatives": null,
-    "correctAnswer": "E"
+    "correctAnswer": "E",
+    "hasImage": false,
+    "imageUrl": null,
+    "pageRef": 9
   },
   {
     "id": "2024-056",
@@ -642,7 +1094,10 @@
     "subject": "Literatura",
     "statement": "A obra Antígona, de Sófocles, é uma tragédia escrita na Grécia Antiga, ao passo que A Pena e a Lei, de Ariano Suassuna, é uma farsa brasileira, inspirada na tradição do teatro medieval e escrita no século XX.",
     "alternatives": null,
-    "correctAnswer": "C"
+    "correctAnswer": "C",
+    "hasImage": false,
+    "imageUrl": null,
+    "pageRef": 9
   },
   {
     "id": "2024-057",
@@ -653,7 +1108,10 @@
     "subject": "Literatura",
     "statement": "Mencionado na última fala de Cheirosa no fragmento apresentado de A Pena e a Lei, mamulengo é um tipo de teatro popular de bonecos típico da região Nordeste do Brasil e caracterizado por gestos mecanizados e rápidos.",
     "alternatives": null,
-    "correctAnswer": "C"
+    "correctAnswer": "C",
+    "hasImage": false,
+    "imageUrl": null,
+    "pageRef": 9
   },
   {
     "id": "2024-058",
@@ -664,7 +1122,10 @@
     "subject": "Artes",
     "statement": "No trecho de A Pena e a Lei, a resposta de Cheiroso à pergunta \"E a morte dos personagens?\" expõe um exemplo de utilização da iluminação como recurso criativo para a encenação.",
     "alternatives": null,
-    "correctAnswer": "C"
+    "correctAnswer": "C",
+    "hasImage": false,
+    "imageUrl": null,
+    "pageRef": 9
   },
   {
     "id": "2024-059",
@@ -675,7 +1136,10 @@
     "subject": "Literatura",
     "statement": "Na obra de Suassuna, caracterizam-se como \"sabidos\" personagens pobres que conseguem tirar vantagens das situações, o que representa uma valorização da sabedoria de uma camada da população que, geralmente, é tida como incapaz, despreparada e pouco inteligente.",
     "alternatives": null,
-    "correctAnswer": "C"
+    "correctAnswer": "C",
+    "hasImage": false,
+    "imageUrl": null,
+    "pageRef": 9
   },
   {
     "id": "2024-060",
@@ -686,7 +1150,10 @@
     "subject": "Literatura",
     "statement": "Em A Pena e a Lei, os personagens \"sabidos\" buscam mobilizar todos os personagens pobres da peça em um ato de revolta contra os personagens poderosos.",
     "alternatives": null,
-    "correctAnswer": "E"
+    "correctAnswer": "E",
+    "hasImage": false,
+    "imageUrl": null,
+    "pageRef": 9
   },
   {
     "id": "2024-061",
@@ -697,7 +1164,10 @@
     "subject": "Literatura",
     "statement": "Ariano Suassuna era contrário à arte erudita e produziu obras em folhetos de cordel da cultura popular a fim de evitar seu consumo pela elite burguesa, pois acreditava na necessidade de fortalecimento da cultura dos marginalizados socialmente.",
     "alternatives": null,
-    "correctAnswer": "E"
+    "correctAnswer": "E",
+    "hasImage": false,
+    "imageUrl": null,
+    "pageRef": 9
   },
   {
     "id": "2024-062",
@@ -708,7 +1178,10 @@
     "subject": "Literatura",
     "statement": "A diminuição das distâncias sociais torna-se visível e cômica em A Pena e a Lei quando os personagens subalternos chamam os poderosos por apelidos, como Vicente Borrote e Cabo Rosinha.",
     "alternatives": null,
-    "correctAnswer": "C"
+    "correctAnswer": "C",
+    "hasImage": false,
+    "imageUrl": null,
+    "pageRef": 9
   },
   {
     "id": "2024-063",
@@ -719,7 +1192,10 @@
     "subject": "Literatura",
     "statement": "Em A Pena e a Lei, a questão racial aparece, entre outras passagens, na representação de Benedito, personagem negro que é retratado de forma positiva e que demonstra ser mais esperto que os dois valentões da cidade.",
     "alternatives": null,
-    "correctAnswer": "C"
+    "correctAnswer": "C",
+    "hasImage": false,
+    "imageUrl": null,
+    "pageRef": 9
   },
   {
     "id": "2024-064",
@@ -730,7 +1206,10 @@
     "subject": "Biologia",
     "statement": "Na fabricação de pão, o crescimento da massa deve-se à ação do dióxido de carbono liberado durante a fermentação alcoólica.",
     "alternatives": null,
-    "correctAnswer": "C"
+    "correctAnswer": "C",
+    "hasImage": false,
+    "imageUrl": null,
+    "pageRef": 9
   },
   {
     "id": "2024-065",
@@ -741,7 +1220,10 @@
     "subject": "Biologia",
     "statement": "Na produção de vinho, a fermentação alcoólica é realizada por bactérias aeróbicas, que convertem os açúcares das uvas produzindo 38 moléculas de ATP.",
     "alternatives": null,
-    "correctAnswer": "E"
+    "correctAnswer": "E",
+    "hasImage": false,
+    "imageUrl": null,
+    "pageRef": 9
   },
   {
     "id": "2024-066",
@@ -757,7 +1239,10 @@
       {"letter": "C", "text": "\"lo\", em \"devo dizê-lo\" (segundo período)."},
       {"letter": "D", "text": "\"que\", em \"que me reservas\" (quarto período)."}
     ],
-    "correctAnswer": "D"
+    "correctAnswer": "D",
+    "hasImage": false,
+    "imageUrl": null,
+    "pageRef": 9
   },
   {
     "id": "2024-067",
@@ -766,9 +1251,12 @@
     "questionNumber": 67,
     "type": "C",
     "subject": "Português",
-    "statement": "Na cantiga \"Vamos, irmã, vamos dormir\" de Fernando Esquio:\n\nNo segundo verso da última estrofe, é opcional o emprego do acento indicativo de crase no vocábulo \"as\" em ambas as suas ocorrências.",
+    "statement": "Cantiga \"Vamos, irmã, vamos dormir\" de Fernando Esquio e xilogravura \"Sereias\" de J. Borges.\n\nNo segundo verso da última estrofe, é opcional o emprego do acento indicativo de crase no vocábulo \"as\" em ambas as suas ocorrências.",
     "alternatives": null,
-    "correctAnswer": "E"
+    "correctAnswer": "E",
+    "hasImage": true,
+    "imageUrl": "/images/questions/page-10.png",
+    "pageRef": 10
   },
   {
     "id": "2024-068",
@@ -779,7 +1267,10 @@
     "subject": "Artes",
     "statement": "A xilogravura é uma técnica artística popular de reprodução de imagens e textos a partir de uma matriz de madeira entalhada cujas partes em relevo são entintadas para impressão sobre papel, à maneira de um carimbo.",
     "alternatives": null,
-    "correctAnswer": "C"
+    "correctAnswer": "C",
+    "hasImage": true,
+    "imageUrl": "/images/questions/page-10.png",
+    "pageRef": 10
   },
   {
     "id": "2024-069",
@@ -790,7 +1281,10 @@
     "subject": "Artes",
     "statement": "Na literatura de cordel, devido à técnica artística empregada, cada folheto é único.",
     "alternatives": null,
-    "correctAnswer": "E"
+    "correctAnswer": "E",
+    "hasImage": false,
+    "imageUrl": null,
+    "pageRef": 10
   },
   {
     "id": "2024-070",
@@ -801,7 +1295,10 @@
     "subject": "Literatura",
     "statement": "No contexto histórico de produção do texto de Fernando Esquio, a voz feminina, que predomina nas cantigas de amigo, é parte de um movimento de afirmação das mulheres como escritoras no meio literário.",
     "alternatives": null,
-    "correctAnswer": "E"
+    "correctAnswer": "E",
+    "hasImage": false,
+    "imageUrl": null,
+    "pageRef": 10
   },
   {
     "id": "2024-071",
@@ -812,7 +1309,10 @@
     "subject": "Literatura",
     "statement": "No texto \"Vamos, irmã, vamos dormir\", identifica-se a repetição da estrutura das frases em paralelo, o que é uma característica recorrente na composição das cantigas de amigo.",
     "alternatives": null,
-    "correctAnswer": "C"
+    "correctAnswer": "C",
+    "hasImage": false,
+    "imageUrl": null,
+    "pageRef": 10
   },
   {
     "id": "2024-072",
@@ -828,7 +1328,10 @@
       {"letter": "C", "text": "a metáfora da submissão feminina, expressa, no texto, pela fragilidade das aves."},
       {"letter": "D", "text": "o contraste bem delimitado entre masculino e feminino."}
     ],
-    "correctAnswer": "B"
+    "correctAnswer": "B",
+    "hasImage": true,
+    "imageUrl": "/images/questions/page-10.png",
+    "pageRef": 10
   },
   {
     "id": "2024-073",
@@ -837,14 +1340,17 @@
     "questionNumber": 73,
     "type": "A",
     "subject": "Geografia",
-    "statement": "A Rede Nacional de Pesquisa em Biodiversidade Marinha (Sisbiota-Mar) avalia a biodiversidade das quatro ilhas oceânicas do Brasil.\n\nA formação de ilhas oceânicas decorre, principalmente, da",
+    "statement": "A Rede Nacional de Pesquisa em Biodiversidade Marinha (Sisbiota-Mar) avalia a biodiversidade das quatro ilhas oceânicas do Brasil: o atol das Rocas, o arquipélago de Fernando de Noronha, São Pedro e São Paulo e as ilhas de Trindade e Martim Vaz.\n\nA formação de ilhas oceânicas decorre, principalmente, da",
     "alternatives": [
       {"letter": "A", "text": "erosão de montanhas submersas."},
       {"letter": "B", "text": "deposição de sedimentos, como areia transportada pelas correntes marítimas."},
       {"letter": "C", "text": "movimentação das placas tectônicas nas zonas de subducção entre continentes."},
       {"letter": "D", "text": "atividade vulcânica, quando magma sobe do manto terrestre e solidifica-se na superfície."}
     ],
-    "correctAnswer": "D"
+    "correctAnswer": "D",
+    "hasImage": false,
+    "imageUrl": null,
+    "pageRef": 10
   },
   {
     "id": "2024-074",
@@ -855,7 +1361,10 @@
     "subject": "Filosofia",
     "statement": "O Manual de Epicteto:\n\n\"Das coisas existentes, algumas são encargos nossos; outras, não. São encargos nossos o juízo, o impulso, o desejo, a repulsa — em suma: tudo quanto seja ação nossa.\"\n\nNo fragmento apresentado, é possível reconhecer a abordagem de temas humanos, como sofrimento e prazer, além de certas características do conhecimento filosófico relacionadas a maneiras éticas de viver.",
     "alternatives": null,
-    "correctAnswer": "C"
+    "correctAnswer": "C",
+    "hasImage": false,
+    "imageUrl": null,
+    "pageRef": 10
   },
   {
     "id": "2024-075",
@@ -866,7 +1375,10 @@
     "subject": "Filosofia",
     "statement": "As lições de Epicteto são baseadas na vida cotidiana durante a antiguidade grega e tratam de aspectos superficiais das ações humanas nesse contexto histórico, portanto são inaplicáveis à problematização filosófica do sentido da vida nos dias atuais.",
     "alternatives": null,
-    "correctAnswer": "E"
+    "correctAnswer": "E",
+    "hasImage": false,
+    "imageUrl": null,
+    "pageRef": 10
   },
   {
     "id": "2024-076",
@@ -875,9 +1387,12 @@
     "questionNumber": 76,
     "type": "C",
     "subject": "Literatura",
-    "statement": "Sermão de Santo Antônio aos Peixes, de Padre Antônio Vieira:\n\nEm seu sermão, Padre Antônio Vieira dirige-se aos peixes como estratégia para reforçar seu argumento de que os fiéis estão indiferentes à exploração que os colonos promovem na região, que constituiria, segundo o pregador, violação dos princípios cristãos.",
+    "statement": "Sermão de Santo Antônio aos Peixes, de Padre Antônio Vieira:\n\n\"A primeira coisa que me desedifica, peixes, de vós, é que vos comeis uns aos outros. Grande escândalo é este...\"\n\nEm seu sermão, Padre Antônio Vieira dirige-se aos peixes como estratégia para reforçar seu argumento de que os fiéis estão indiferentes à exploração que os colonos promovem na região, que constituiria, segundo o pregador, violação dos princípios cristãos.",
     "alternatives": null,
-    "correctAnswer": "C"
+    "correctAnswer": "C",
+    "hasImage": false,
+    "imageUrl": null,
+    "pageRef": 11
   },
   {
     "id": "2024-077",
@@ -888,7 +1403,10 @@
     "subject": "Literatura",
     "statement": "No fragmento de texto apresentado do Sermão de Santo Antônio aos Peixes, a comparação dos seres humanos a peixes ressalta a inocência dos primeiros em relação aos atos violentos que possam ter praticado.",
     "alternatives": null,
-    "correctAnswer": "E"
+    "correctAnswer": "E",
+    "hasImage": false,
+    "imageUrl": null,
+    "pageRef": 11
   },
   {
     "id": "2024-078",
@@ -897,9 +1415,12 @@
     "questionNumber": 78,
     "type": "C",
     "subject": "Matemática",
-    "statement": "Considerando a curva de Lorenz e os pontos A = (0; 0), B = (0,8; 0), C = (0,8; 0,5), D = (1; 1) e E = (0; 1):\n\nA soma das áreas do triângulo ABC e do trapézio BCDE é superior a 0,4 unidade de área.",
+    "statement": "A curva de Lorenz mostra como o percentual da renda de uma população varia em função do percentual da população. Os pontos A = (0; 0), B = (0,8; 0), C = (0,8; 0,5), D = (1; 1) e E = (0; 1) estão identificados no gráfico.\n\nA soma das áreas do triângulo ABC e do trapézio BCDE é superior a 0,4 unidade de área.",
     "alternatives": null,
-    "correctAnswer": "C"
+    "correctAnswer": "C",
+    "hasImage": true,
+    "imageUrl": "/images/questions/page-11.png",
+    "pageRef": 11
   },
   {
     "id": "2024-079",
@@ -910,7 +1431,10 @@
     "subject": "Matemática",
     "statement": "Na situação em questão da curva de Lorenz, o índice de Gini é superior a 0,3.",
     "alternatives": null,
-    "correctAnswer": "C"
+    "correctAnswer": "C",
+    "hasImage": true,
+    "imageUrl": "/images/questions/page-11.png",
+    "pageRef": 11
   },
   {
     "id": "2024-080",
@@ -921,7 +1445,10 @@
     "subject": "Matemática",
     "statement": "Mais da metade da renda da população em questão é obtida por menos de um quarto dessa população.",
     "alternatives": null,
-    "correctAnswer": "C"
+    "correctAnswer": "C",
+    "hasImage": true,
+    "imageUrl": "/images/questions/page-11.png",
+    "pageRef": 11
   },
   {
     "id": "2024-081",
@@ -932,7 +1459,10 @@
     "subject": "Matemática",
     "statement": "Um índice de Gini próximo de zero indica menos desigualdade social na população.",
     "alternatives": null,
-    "correctAnswer": "C"
+    "correctAnswer": "C",
+    "hasImage": false,
+    "imageUrl": null,
+    "pageRef": 11
   },
   {
     "id": "2024-082",
@@ -941,9 +1471,12 @@
     "questionNumber": 82,
     "type": "C",
     "subject": "Biologia",
-    "statement": "A teoria da panspermia cósmica propõe que a vida na Terra se originou por um processo exógeno, com a chegada de componentes essenciais à Terra a partir do espaço, transportados por meteoritos ou cometas.",
+    "statement": "Embora exista uma grande variedade de elementos, somente cerca de 1/3 deles são utilizados nas formas de vida conhecidas. Os quatro elementos mais abundantes em organismos vivos são hidrogênio, carbono, nitrogênio e oxigênio.\n\nA teoria da panspermia cósmica propõe que a vida na Terra se originou por um processo exógeno, com a chegada de componentes essenciais à Terra a partir do espaço, transportados por meteoritos ou cometas.",
     "alternatives": null,
-    "correctAnswer": "C"
+    "correctAnswer": "C",
+    "hasImage": false,
+    "imageUrl": null,
+    "pageRef": 12
   },
   {
     "id": "2024-083",
@@ -954,7 +1487,10 @@
     "subject": "Biologia",
     "statement": "Os experimentos desenvolvidos por Miller-Urey, que simulavam as condições da atmosfera primitiva, evidenciaram a formação de aminoácidos, substâncias formadas pela combinação básica de hidrogênio, carbono, nitrogênio e oxigênio (além de outros átomos menos frequentes).",
     "alternatives": null,
-    "correctAnswer": "C"
+    "correctAnswer": "C",
+    "hasImage": false,
+    "imageUrl": null,
+    "pageRef": 12
   },
   {
     "id": "2024-084",
@@ -963,9 +1499,12 @@
     "questionNumber": 84,
     "type": "C",
     "subject": "Química",
-    "statement": "Sobre fosfina (PH₃) e amônia (NH₃):\n\nO ângulo de ligação entre os átomos de hidrogênio e o átomo central é maior na amônia que na fosfina.",
+    "statement": "Uma equipe de cientistas descobriu fosfina (PH₃) na atmosfera de Vênus. Fosfina e amônia são consideradas possíveis biomarcadores.\n\nO ângulo de ligação entre os átomos de hidrogênio e o átomo central é maior na amônia que na fosfina.",
     "alternatives": null,
-    "correctAnswer": "C"
+    "correctAnswer": "C",
+    "hasImage": false,
+    "imageUrl": null,
+    "pageRef": 12
   },
   {
     "id": "2024-085",
@@ -976,7 +1515,10 @@
     "subject": "Química",
     "statement": "De acordo com a classificação dos compostos hidretos, CaH₂, PH₃ e SiH₄ são compostos covalentes.",
     "alternatives": null,
-    "correctAnswer": "E"
+    "correctAnswer": "E",
+    "hasImage": false,
+    "imageUrl": null,
+    "pageRef": 12
   },
   {
     "id": "2024-086",
@@ -987,7 +1529,10 @@
     "subject": "Química",
     "statement": "Em termos de energia de dissociação de ligações entre o hidrogênio e os elementos do grupo 15 da Classificação Periódica dos Elementos, a fosfina é um composto mais estável que a amônia.",
     "alternatives": null,
-    "correctAnswer": "E"
+    "correctAnswer": "E",
+    "hasImage": false,
+    "imageUrl": null,
+    "pageRef": 12
   },
   {
     "id": "2024-087",
@@ -1003,7 +1548,10 @@
       {"letter": "C", "text": "igual ou superior a 1,6 kg e inferior a 1,7 kg."},
       {"letter": "D", "text": "igual ou superior a 1,7 kg e inferior a 1,8 kg."}
     ],
-    "correctAnswer": "B"
+    "correctAnswer": "B",
+    "hasImage": false,
+    "imageUrl": null,
+    "pageRef": 12
   },
   {
     "id": "2024-088",
@@ -1012,9 +1560,12 @@
     "questionNumber": 88,
     "type": "C",
     "subject": "Física",
-    "statement": "Considerando as forças F₁ e F₂ exercidas pelo Sol e pela Terra sobre o telescópio James Webb:\n\nA força resultante que o telescópio exerce sobre o sistema Sol-Terra é igual a −F.",
+    "statement": "Na figura, estão mostradas as forças F₁ e F₂ exercidas pelo Sol e pela Terra sobre o telescópio James Webb, localizado no ponto P.\n\nA força resultante que o telescópio exerce sobre o sistema Sol-Terra é igual a −F.",
     "alternatives": null,
-    "correctAnswer": "C"
+    "correctAnswer": "C",
+    "hasImage": true,
+    "imageUrl": "/images/questions/page-12.png",
+    "pageRef": 12
   },
   {
     "id": "2024-089",
@@ -1025,7 +1576,10 @@
     "subject": "Física",
     "statement": "A aceleração do telescópio James Webb, quando em movimento, não depende da sua massa.",
     "alternatives": null,
-    "correctAnswer": "C"
+    "correctAnswer": "C",
+    "hasImage": true,
+    "imageUrl": "/images/questions/page-12.png",
+    "pageRef": 12
   },
   {
     "id": "2024-090",
@@ -1036,7 +1590,10 @@
     "subject": "Física",
     "statement": "O momento total do sistema de três corpos (Sol, Terra e telescópio) se conserva e o centro de massa do sistema Sol-Terra permanecerá em repouso.",
     "alternatives": null,
-    "correctAnswer": "E"
+    "correctAnswer": "E",
+    "hasImage": true,
+    "imageUrl": "/images/questions/page-12.png",
+    "pageRef": 12
   },
   {
     "id": "2024-091",
@@ -1047,7 +1604,10 @@
     "subject": "Física",
     "statement": "Em qualquer trajetória do telescópio, sua energia mecânica permanecerá constante ao longo do tempo, uma vez que as forças gravitacionais são conservativas.",
     "alternatives": null,
-    "correctAnswer": "E"
+    "correctAnswer": "E",
+    "hasImage": true,
+    "imageUrl": "/images/questions/page-12.png",
+    "pageRef": 12
   },
   {
     "id": "2024-092",
@@ -1056,9 +1616,12 @@
     "questionNumber": 92,
     "type": "C",
     "subject": "Física",
-    "statement": "O trabalho realizado pelas forças gravitacionais sobre o telescópio em movimento circular é nulo.",
+    "statement": "Considerando os pontos de Lagrange L1, L2, L3, L4 e L5 (figuras I e II):\n\nO trabalho realizado pelas forças gravitacionais sobre o telescópio em movimento circular é nulo.",
     "alternatives": null,
-    "correctAnswer": "C"
+    "correctAnswer": "C",
+    "hasImage": true,
+    "imageUrl": "/images/questions/page-13.png",
+    "pageRef": 13
   },
   {
     "id": "2024-093",
@@ -1069,7 +1632,10 @@
     "subject": "Física",
     "statement": "A distância da Terra até o centro de massa do sistema Sol-Terra é M·r/(M+m), onde M é a massa do Sol, m é a massa da Terra e r é a distância entre eles.",
     "alternatives": null,
-    "correctAnswer": "C"
+    "correctAnswer": "C",
+    "hasImage": true,
+    "imageUrl": "/images/questions/page-13.png",
+    "pageRef": 13
   },
   {
     "id": "2024-094",
@@ -1080,7 +1646,10 @@
     "subject": "Física",
     "statement": "Se o telescópio está no ponto estacionário L4, então sua distância do Sol é igual à sua distância da Terra.",
     "alternatives": null,
-    "correctAnswer": "C"
+    "correctAnswer": "C",
+    "hasImage": true,
+    "imageUrl": "/images/questions/page-13.png",
+    "pageRef": 13
   },
   {
     "id": "2024-095",
@@ -1091,7 +1660,10 @@
     "subject": "Física",
     "statement": "O triângulo de vértices nos pontos L1, L3 e L4 é um triângulo retângulo.",
     "alternatives": null,
-    "correctAnswer": "E"
+    "correctAnswer": "E",
+    "hasImage": true,
+    "imageUrl": "/images/questions/page-13.png",
+    "pageRef": 13
   },
   {
     "id": "2024-096",
@@ -1107,7 +1679,10 @@
       {"letter": "C", "text": "2F_Sol × √(1 + x + x²)"},
       {"letter": "D", "text": "(F_Sol + F_Terra) × √(1 + x + x²)"}
     ],
-    "correctAnswer": "B"
+    "correctAnswer": "B",
+    "hasImage": true,
+    "imageUrl": "/images/questions/page-13.png",
+    "pageRef": 13
   },
   {
     "id": "2024-099",
@@ -1116,9 +1691,12 @@
     "questionNumber": 99,
     "type": "C",
     "subject": "Química",
-    "statement": "Considerando-se os íons Ca²⁺, K⁺, P³⁻ e Cl⁻, a ordem decrescente do raio iônico é: P³⁻ > Cl⁻ > K⁺ > Ca²⁺.",
+    "statement": "A manutenção dos níveis de CO₂ em embalagens é crucial para a preservação de alimentos como o kimchi. Reação: Ca(OH)₂(s) + CO₂(g) → CaCO₃(s) + H₂O(l)\n\nConsiderando-se os íons Ca²⁺, K⁺, P³⁻ e Cl⁻, a ordem decrescente do raio iônico é: P³⁻ > Cl⁻ > K⁺ > Ca²⁺.",
     "alternatives": null,
-    "correctAnswer": "C"
+    "correctAnswer": "C",
+    "hasImage": false,
+    "imageUrl": null,
+    "pageRef": 14
   },
   {
     "id": "2024-100",
@@ -1127,8 +1705,11 @@
     "questionNumber": 100,
     "type": "C",
     "subject": "Química",
-    "statement": "A manutenção dos níveis de CO₂ em embalagens é crucial para a preservação de alimentos como o kimchi.\n\nReação: Ca(OH)₂(s) + CO₂(g) → CaCO₃(s) + H₂O(l)\n\nSe, em uma embalagem de kimchi, for gerado um excesso de 1.100 mg de CO₂, será necessária uma quantidade de Ca(OH)₂ superior a 2 gramas para consumir o gás carbônico gerado.",
+    "statement": "Se, em uma embalagem de kimchi, for gerado um excesso de 1.100 mg de CO₂, será necessária uma quantidade de Ca(OH)₂ superior a 2 gramas para consumir o gás carbônico gerado.",
     "alternatives": null,
-    "correctAnswer": "E"
+    "correctAnswer": "E",
+    "hasImage": false,
+    "imageUrl": null,
+    "pageRef": 14
   }
 ]
