@@ -1,0 +1,478 @@
+[
+  {
+    "id": "2024-001",
+    "year": 2024,
+    "stage": 1,
+    "questionNumber": 1,
+    "type": "C",
+    "subject": "Espanhol",
+    "statement": "Pequeña fuga en sol menor de Bach\n\nEs complicado hablar de formas musicales por lo que tienen de ideales: por mucho que teoricemos sobre las normas de la fuga, la práctica sólo nos presenta excepciones.\n\nDe acuerdo con el texto, juzgue el siguiente ítem:\n\nEs posible inferir la imparcialidad en la autoría del texto.",
+    "alternatives": null,
+    "correctAnswer": "E"
+  },
+  {
+    "id": "2024-002",
+    "year": 2024,
+    "stage": 1,
+    "questionNumber": 2,
+    "type": "C",
+    "subject": "Espanhol",
+    "statement": "Los pronombres «la» y «le» presentes en el enunciado «las demás la miran, la agasajan, le facilitan el camino», en el segundo párrafo, se refieren al mismo término «una voz».",
+    "alternatives": null,
+    "correctAnswer": "C"
+  },
+  {
+    "id": "2024-003",
+    "year": 2024,
+    "stage": 1,
+    "questionNumber": 3,
+    "type": "C",
+    "subject": "Espanhol",
+    "statement": "El texto recurre a elementos metafóricos de la naturaleza para comentar la dificultad que presentan las fugas de Bach.",
+    "alternatives": null,
+    "correctAnswer": "C"
+  },
+  {
+    "id": "2024-010",
+    "year": 2024,
+    "stage": 1,
+    "questionNumber": 10,
+    "type": "A",
+    "subject": "Espanhol",
+    "statement": "De acuerdo con la viñeta, es posible inferir que, para alguna gente, las estrellas",
+    "alternatives": [
+      {"letter": "A", "text": "suelen ser personas."},
+      {"letter": "B", "text": "son astros que están en el cielo."},
+      {"letter": "C", "text": "se aprecian mejor durante la noche."},
+      {"letter": "D", "text": "tienen diferentes tamaños y formas."}
+    ],
+    "correctAnswer": "A"
+  },
+  {
+    "id": "2024-011",
+    "year": 2024,
+    "stage": 1,
+    "questionNumber": 11,
+    "type": "C",
+    "subject": "Português",
+    "statement": "Discurso de Txai Suruí na COP 26:\n\n\"Meu nome é Txai Suruí, eu tenho só 24, mas meu povo vive há pelo menos 6 mil anos na floresta amazônica. Meu pai, o grande cacique Almir Suruí, me ensinou que devemos ouvir as estrelas, a Lua, o vento, os animais e as árvores.\"\n\nNo primeiro parágrafo, o isolamento do trecho \"o grande cacique Almir Suruí\" entre vírgulas tem a finalidade de marcar uma inversão de termos no período.",
+    "alternatives": null,
+    "correctAnswer": "E"
+  },
+  {
+    "id": "2024-013",
+    "year": 2024,
+    "stage": 1,
+    "questionNumber": 13,
+    "type": "C",
+    "subject": "Português",
+    "statement": "\"Hoje o clima está esquentando, os animais estão desaparecendo, os rios estão morrendo, nossas plantações não florescem como antes.\"\n\nNo primeiro período do segundo parágrafo, a sequência de locuções verbais com verbo no gerúndio — \"está esquentando\", \"estão desaparecendo\", \"estão morrendo\" — sinaliza a continuidade dos acontecimentos mencionados, que denotam prejuízos para o planeta.",
+    "alternatives": null,
+    "correctAnswer": "C"
+  },
+  {
+    "id": "2024-014",
+    "year": 2024,
+    "stage": 1,
+    "questionNumber": 14,
+    "type": "C",
+    "subject": "Português",
+    "statement": "Em seu discurso, a jovem indígena relaciona as crises climáticas e ambientais aos caminhos tomados por uma parte da humanidade sobre a Terra, entretanto demonstra que acredita na possibilidade de mudanças, com as vozes indígenas sendo ouvidas e suas orientações filosóficas e culturais sendo adotadas para contribuir na transformação da realidade.",
+    "alternatives": null,
+    "correctAnswer": "C"
+  },
+  {
+    "id": "2024-017",
+    "year": 2024,
+    "stage": 1,
+    "questionNumber": 17,
+    "type": "A",
+    "subject": "História",
+    "statement": "Muitos relatos do período colonial brasileiro, e também de épocas posteriores, descreviam os indígenas como povos \"sem lei, sem rei e sem fé\". Esta maneira de conceber os povos indígenas",
+    "alternatives": [
+      {"letter": "A", "text": "resultou na não escravização dos povos indígenas pelos portugueses."},
+      {"letter": "B", "text": "foi um dos fundamentos da política indigenista portuguesa no Brasil colônia."},
+      {"letter": "C", "text": "resultou em um completo desinteresse dos colonizadores pelos povos indígenas."},
+      {"letter": "D", "text": "é uma das evidências do respeito à cultura dos povos indígenas por parte dos colonizados."}
+    ],
+    "correctAnswer": "B"
+  },
+  {
+    "id": "2024-020",
+    "year": 2024,
+    "stage": 1,
+    "questionNumber": 20,
+    "type": "C",
+    "subject": "Química",
+    "statement": "A degradação do metilmercúrio (CH₃Hg⁺), denominada demetilação, é um processo que reduz a biodisponibilidade do mercúrio para os organismos aquáticos.\n\n4CH₃Hg⁺ + 2H₂O + 4H⁺ ⇌ 3CH₄ + CO₂ + 4Hg²⁺ + 4H₂\n\nConforme a reação apresentada, no processo de demetilação, é observada a conservação da matéria, pois a soma das massas dos reagentes é igual à soma das massas dos produtos.",
+    "alternatives": null,
+    "correctAnswer": "C"
+  },
+  {
+    "id": "2024-022",
+    "year": 2024,
+    "stage": 1,
+    "questionNumber": 22,
+    "type": "C",
+    "subject": "História",
+    "statement": "O Brasil foi o principal destino de africanos escravizados nas Américas, sobretudo a partir do século XVII; assim, a forte presença africana na América portuguesa deu forma ao escravismo, instituição central no processo de formação da sociedade brasileira.",
+    "alternatives": null,
+    "correctAnswer": "C"
+  },
+  {
+    "id": "2024-023",
+    "year": 2024,
+    "stage": 1,
+    "questionNumber": 23,
+    "type": "C",
+    "subject": "História",
+    "statement": "A chamada diáspora africana deu início ao processo de civilização, aculturamento e organização social e política dos povos que habitavam o continente africano no século XV.",
+    "alternatives": null,
+    "correctAnswer": "E"
+  },
+  {
+    "id": "2024-026",
+    "year": 2024,
+    "stage": 1,
+    "questionNumber": 26,
+    "type": "C",
+    "subject": "História",
+    "statement": "O Quilombo dos Palmares, o mais conhecido movimento insurgente de escravizados da história do Brasil, existiu por cerca de 100 anos, constituindo um espaço africano no interior do domínio colonial português da América.",
+    "alternatives": null,
+    "correctAnswer": "C"
+  },
+  {
+    "id": "2024-031",
+    "year": 2024,
+    "stage": 1,
+    "questionNumber": 31,
+    "type": "C",
+    "subject": "Biologia",
+    "statement": "A diversidade de hábitats dentro do cerrado contribui para a presença de uma ampla gama de espécies vegetais, especialmente árvores cujas copas formam uma cobertura contínua e fechada, característica típica da formação savânica encontrada no cerrado, mas que vem sofrendo alterações com o desmatamento crescente.",
+    "alternatives": null,
+    "correctAnswer": "E"
+  },
+  {
+    "id": "2024-033",
+    "year": 2024,
+    "stage": 1,
+    "questionNumber": 33,
+    "type": "C",
+    "subject": "Geografia",
+    "statement": "A topografia acidentada da Chapada dos Veadeiros constitui uma barreira natural que dificulta a agricultura extensiva e limita a ocupação humana em larga escala, o que favorece a preservação ambiental.",
+    "alternatives": null,
+    "correctAnswer": "C"
+  },
+  {
+    "id": "2024-037",
+    "year": 2024,
+    "stage": 1,
+    "questionNumber": 37,
+    "type": "A",
+    "subject": "Biologia",
+    "statement": "A interação ecológica envolvida no controle da espécie S. albula descrito no texto precedente, conforme os efeitos provocados pelas referidas toxinas Cry e Vip do Bacillus thuringiensis, é denominada",
+    "alternatives": [
+      {"letter": "A", "text": "parasitismo."},
+      {"letter": "B", "text": "predatismo."},
+      {"letter": "C", "text": "mutualismo."},
+      {"letter": "D", "text": "amensalismo."}
+    ],
+    "correctAnswer": "D"
+  },
+  {
+    "id": "2024-039",
+    "year": 2024,
+    "stage": 1,
+    "questionNumber": 39,
+    "type": "C",
+    "subject": "Geografia",
+    "statement": "A distribuição de chuvas em Manaus é característica de clima equatorial.",
+    "alternatives": null,
+    "correctAnswer": "C"
+  },
+  {
+    "id": "2024-040",
+    "year": 2024,
+    "stage": 1,
+    "questionNumber": 40,
+    "type": "C",
+    "subject": "Geografia",
+    "statement": "A expressiva sazonalidade mostrada no climograma referente a Formosa, com ritmo anual de chuvas bem definido, é evidência da tropicalidade do clima na região.",
+    "alternatives": null,
+    "correctAnswer": "C"
+  },
+  {
+    "id": "2024-041",
+    "year": 2024,
+    "stage": 1,
+    "questionNumber": 41,
+    "type": "A",
+    "subject": "Química",
+    "statement": "A respeito do papel dos diferentes gases envolvidos no efeito estufa, assinale a opção correta.",
+    "alternatives": [
+      {"letter": "A", "text": "O dióxido de carbono (CO₂) é um gás de efeito estufa proveniente, principalmente, do uso de fertilizantes nitrogenados."},
+      {"letter": "B", "text": "Os gases fluorados, como o CFC, são extremamente eficazes na retenção de calor e, embora permaneçam na atmosfera por muito pouco tempo, o calor por eles retido pode ser convertido em energia elétrica."},
+      {"letter": "C", "text": "O metano (CH₄) é um gás muito eficiente em reter calor na atmosfera, sendo a pecuária uma das principais atividades emissoras desse gás."},
+      {"letter": "D", "text": "O óxido nitroso (N₂O) é liberado durante a fabricação de aerossóis e sua capacidade de reter calor permite seu emprego em baterias para geração de energia elétrica."}
+    ],
+    "correctAnswer": "C"
+  },
+  {
+    "id": "2024-042",
+    "year": 2024,
+    "stage": 1,
+    "questionNumber": 42,
+    "type": "C",
+    "subject": "História",
+    "statement": "A Revolução Industrial alterou tanto o modo de produção artesanal na Inglaterra a partir do final do século XVIII, quando maquinário movido a combustíveis fósseis passaram a ser utilizados no processo produtivo, como impactou negativamente as relações de trabalho, razão pela qual os trabalhadores criaram novas formas de associação e de resistência.",
+    "alternatives": null,
+    "correctAnswer": "C"
+  },
+  {
+    "id": "2024-044",
+    "year": 2024,
+    "stage": 1,
+    "questionNumber": 44,
+    "type": "C",
+    "subject": "Artes",
+    "statement": "A estrutura arquitetônica das catedrais góticas, seus vitrais e sua decoração escultórica, ao ilustrarem passagens bíblicas, cumpriam uma função de educação religiosa, na medida em que possibilitavam a instrução dos fiéis, em sua maioria, analfabetos, por meio de elementos visuais.",
+    "alternatives": null,
+    "correctAnswer": "C"
+  },
+  {
+    "id": "2024-047",
+    "year": 2024,
+    "stage": 1,
+    "questionNumber": 47,
+    "type": "C",
+    "subject": "Matemática",
+    "statement": "Considerando a razão áurea φ (phi), que é a raiz positiva da função f(x) = x² - x - 1:\n\nO número φ satisfaz a equação 1/φ + 1 = φ e dessa equação conclui-se que a + b = c.",
+    "alternatives": null,
+    "correctAnswer": "C"
+  },
+  {
+    "id": "2024-048",
+    "year": 2024,
+    "stage": 1,
+    "questionNumber": 48,
+    "type": "C",
+    "subject": "Matemática",
+    "statement": "Na imagem da Catedral de Notre Dame de Reims, as torres da catedral são paralelas.",
+    "alternatives": null,
+    "correctAnswer": "C"
+  },
+  {
+    "id": "2024-049",
+    "year": 2024,
+    "stage": 1,
+    "questionNumber": 49,
+    "type": "C",
+    "subject": "Matemática",
+    "statement": "Considerando √5 = 2,236 e que φ é a razão áurea (raiz positiva de x² - x - 1 = 0):\n\nO número φ é inferior a 1,5.",
+    "alternatives": null,
+    "correctAnswer": "E"
+  },
+  {
+    "id": "2024-050",
+    "year": 2024,
+    "stage": 1,
+    "questionNumber": 50,
+    "type": "A",
+    "subject": "Matemática",
+    "statement": "Os números reais a, b e c (com proporções a/b = b/c = φ, razão áurea) estão, nessa ordem, em progressão",
+    "alternatives": [
+      {"letter": "A", "text": "aritmética de razão menor que zero."},
+      {"letter": "B", "text": "aritmética de razão maior que zero."},
+      {"letter": "C", "text": "geométrica de razão menor que um."},
+      {"letter": "D", "text": "geométrica de razão maior que um."}
+    ],
+    "correctAnswer": "C"
+  },
+  {
+    "id": "2024-053",
+    "year": 2024,
+    "stage": 1,
+    "questionNumber": 53,
+    "type": "C",
+    "subject": "Português",
+    "statement": "No fragmento da peça A Pena e a Lei, o emprego dos adjetivos \"sabido\" e \"besta\" na terceira fala de Cheiroso remete a um registro coloquial da língua portuguesa.",
+    "alternatives": null,
+    "correctAnswer": "C"
+  },
+  {
+    "id": "2024-056",
+    "year": 2024,
+    "stage": 1,
+    "questionNumber": 56,
+    "type": "C",
+    "subject": "Literatura",
+    "statement": "A obra Antígona, de Sófocles, é uma tragédia escrita na Grécia Antiga, ao passo que A Pena e a Lei, de Ariano Suassuna, é uma farsa brasileira, inspirada na tradição do teatro medieval e escrita no século XX.",
+    "alternatives": null,
+    "correctAnswer": "C"
+  },
+  {
+    "id": "2024-057",
+    "year": 2024,
+    "stage": 1,
+    "questionNumber": 57,
+    "type": "C",
+    "subject": "Literatura",
+    "statement": "Mencionado na última fala de Cheirosa no fragmento apresentado de A Pena e a Lei, mamulengo é um tipo de teatro popular de bonecos típico da região Nordeste do Brasil e caracterizado por gestos mecanizados e rápidos.",
+    "alternatives": null,
+    "correctAnswer": "C"
+  },
+  {
+    "id": "2024-064",
+    "year": 2024,
+    "stage": 1,
+    "questionNumber": 64,
+    "type": "C",
+    "subject": "Biologia",
+    "statement": "Na fabricação de pão, o crescimento da massa deve-se à ação do dióxido de carbono liberado durante a fermentação alcoólica.",
+    "alternatives": null,
+    "correctAnswer": "C"
+  },
+  {
+    "id": "2024-065",
+    "year": 2024,
+    "stage": 1,
+    "questionNumber": 65,
+    "type": "C",
+    "subject": "Biologia",
+    "statement": "Na produção de vinho, a fermentação alcoólica é realizada por bactérias aeróbicas, que convertem os açúcares das uvas produzindo 38 moléculas de ATP.",
+    "alternatives": null,
+    "correctAnswer": "E"
+  },
+  {
+    "id": "2024-068",
+    "year": 2024,
+    "stage": 1,
+    "questionNumber": 68,
+    "type": "C",
+    "subject": "Artes",
+    "statement": "A xilogravura é uma técnica artística popular de reprodução de imagens e textos a partir de uma matriz de madeira entalhada cujas partes em relevo são entintadas para impressão sobre papel, à maneira de um carimbo.",
+    "alternatives": null,
+    "correctAnswer": "C"
+  },
+  {
+    "id": "2024-071",
+    "year": 2024,
+    "stage": 1,
+    "questionNumber": 71,
+    "type": "C",
+    "subject": "Literatura",
+    "statement": "No texto \"Vamos, irmã, vamos dormir\" de Fernando Esquio, identifica-se a repetição da estrutura das frases em paralelo, o que é uma característica recorrente na composição das cantigas de amigo.",
+    "alternatives": null,
+    "correctAnswer": "C"
+  },
+  {
+    "id": "2024-076",
+    "year": 2024,
+    "stage": 1,
+    "questionNumber": 76,
+    "type": "C",
+    "subject": "Literatura",
+    "statement": "Em seu sermão, Padre Antônio Vieira dirige-se aos peixes como estratégia para reforçar seu argumento de que os fiéis estão indiferentes à exploração que os colonos promovem na região, que constituiria, segundo o pregador, violação dos princípios cristãos.",
+    "alternatives": null,
+    "correctAnswer": "C"
+  },
+  {
+    "id": "2024-081",
+    "year": 2024,
+    "stage": 1,
+    "questionNumber": 81,
+    "type": "C",
+    "subject": "Matemática",
+    "statement": "Considerando a curva de Lorenz e o índice de Gini (G = S₁/(S₁+S₂)):\n\nUm índice de Gini próximo de zero indica menos desigualdade social na população.",
+    "alternatives": null,
+    "correctAnswer": "C"
+  },
+  {
+    "id": "2024-082",
+    "year": 2024,
+    "stage": 1,
+    "questionNumber": 82,
+    "type": "C",
+    "subject": "Biologia",
+    "statement": "A teoria da panspermia cósmica propõe que a vida na Terra se originou por um processo exógeno, com a chegada de componentes essenciais à Terra a partir do espaço, transportados por meteoritos ou cometas.",
+    "alternatives": null,
+    "correctAnswer": "C"
+  },
+  {
+    "id": "2024-083",
+    "year": 2024,
+    "stage": 1,
+    "questionNumber": 83,
+    "type": "C",
+    "subject": "Biologia",
+    "statement": "Os experimentos desenvolvidos por Miller-Urey, que simulavam as condições da atmosfera primitiva, evidenciaram a formação de aminoácidos, substâncias formadas pela combinação básica de hidrogênio, carbono, nitrogênio e oxigênio (além de outros átomos menos frequentes).",
+    "alternatives": null,
+    "correctAnswer": "C"
+  },
+  {
+    "id": "2024-084",
+    "year": 2024,
+    "stage": 1,
+    "questionNumber": 84,
+    "type": "C",
+    "subject": "Química",
+    "statement": "Considerando a fosfina (PH₃) e a amônia (NH₃):\n\nO ângulo de ligação entre os átomos de hidrogênio e o átomo central é maior na amônia que na fosfina.",
+    "alternatives": null,
+    "correctAnswer": "C"
+  },
+  {
+    "id": "2024-088",
+    "year": 2024,
+    "stage": 1,
+    "questionNumber": 88,
+    "type": "C",
+    "subject": "Física",
+    "statement": "Considerando as forças F₁ e F₂ exercidas pelo Sol e pela Terra sobre o telescópio James Webb:\n\nA força resultante que o telescópio exerce sobre o sistema Sol-Terra é igual a −F.",
+    "alternatives": null,
+    "correctAnswer": "C"
+  },
+  {
+    "id": "2024-089",
+    "year": 2024,
+    "stage": 1,
+    "questionNumber": 89,
+    "type": "C",
+    "subject": "Física",
+    "statement": "A aceleração do telescópio James Webb, quando em movimento, não depende da sua massa.",
+    "alternatives": null,
+    "correctAnswer": "C"
+  },
+  {
+    "id": "2024-092",
+    "year": 2024,
+    "stage": 1,
+    "questionNumber": 92,
+    "type": "C",
+    "subject": "Física",
+    "statement": "O trabalho realizado pelas forças gravitacionais sobre o telescópio em movimento circular é nulo.",
+    "alternatives": null,
+    "correctAnswer": "C"
+  },
+  {
+    "id": "2024-099",
+    "year": 2024,
+    "stage": 1,
+    "questionNumber": 99,
+    "type": "C",
+    "subject": "Química",
+    "statement": "Considerando-se os elementos Ca²⁺, K⁺, P³⁻ e Cl⁻, a ordem decrescente do raio iônico é: P³⁻ > Cl⁻ > K⁺ > Ca²⁺.",
+    "alternatives": null,
+    "correctAnswer": "C"
+  },
+  {
+    "id": "2024-100",
+    "year": 2024,
+    "stage": 1,
+    "questionNumber": 100,
+    "type": "C",
+    "subject": "Química",
+    "statement": "Se, em uma embalagem de kimchi, for gerado um excesso de 1.100 mg de CO₂, será necessária uma quantidade de Ca(OH)₂ superior a 2 gramas para consumir o gás carbônico gerado.\n\nReação: Ca(OH)₂(s) + CO₂(g) → CaCO₃(s) + H₂O(l)",
+    "alternatives": null,
+    "correctAnswer": "E"
+  }
+]
